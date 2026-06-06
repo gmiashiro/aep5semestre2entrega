@@ -1,7 +1,15 @@
-.input-label {
+.form-body {
     font-family: "Google Sans Flex", sans-serif;
-    font-weight: 500;
     color: #020D12;
+    margin-top: 50px;
+}
+
+input {
+    padding-left: 18px;
+}
+
+.input-label {
+    font-weight: 500;
 }
 
 .input-box {
@@ -12,6 +20,7 @@
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: italic;
+    font-size: 18px;
 }
 
 .input-sucess {
@@ -43,4 +52,11 @@
 
 .input-message-warning {
     color: #807C0F;
+}
+
+.link-blue {
+    color: #1578A2;
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline;
 }
