@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E8EEF0;
+}
+
+header {
+    height: 94px;
+    width: 100%;
+    background-color: #F8F9FA;
+    border-bottom: solid 2px #0E506C;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    font-size: 48px;
+    margin-left: 70px;
+}
+
+.header-buttons {
+    margin-right: 70px;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    font-family: "Oswald", sans-serif;
+    color: #0E506C;
+    font-weight: 700;
+}
+
+.profile-button {
+    background-color: #E8EEF0;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-back-container {
+    position: absolute;
+    top: 20px;
+    left: 70px;
+}
+
+.button-back {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    color: #020D12;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-back img {
+    width: 19px;
+}
+
+.shadow-box {
+    background-color: #F6F8F9;
+    border-radius: 9px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.29);
+}
+
+.button-blue {
+    background-color: #1578A2;
+    color: #F6F8F9;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}

@@ -1,0 +1,62 @@
+.form-body {
+    font-family: "Google Sans Flex", sans-serif;
+    color: #020D12;
+    margin-top: 50px;
+}
+
+input {
+    padding-left: 18px;
+}
+
+.input-label {
+    font-weight: 500;
+}
+
+.input-box {
+    background-color: #EDF3F6;
+    border: solid 2px #1578A2;
+    border-radius: 9px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.input-sucess {
+    background-color: #EDFCEF;
+    border-color: #21D333;
+}
+
+.input-warning {
+    background-color: #FDFCED;
+    border-color: #E4DD1B;
+}
+
+.input-error {
+    background-color: #FDEDED;
+    border-color: #DF1E1E;
+}
+
+.input-message {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.input-message-error {
+    color: #B41818;
+}
+
+.input-message-warning {
+    color: #807C0F;
+}
+
+.link-blue {
+    color: #1578A2;
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline;
+}

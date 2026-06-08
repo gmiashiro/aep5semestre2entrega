@@ -1,0 +1,141 @@
+.blue-container {
+    background-color: #072836;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.button-back {
+    color: #EDF8FD;
+}
+
+.blue-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+}
+
+.blue-image {
+    width: 397px;
+    transform: scaleX(-1);
+}
+
+.blue-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.blue-text-container .logo {
+    font-size: 48px;
+    color: #F8F9FA;
+    padding-bottom: 10px;
+}
+
+.blue-text {
+    padding-left: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 47px;
+    max-width: 385px;
+}
+
+.blue-pure-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blue-text p {
+    font-size: 24px;
+    font-family: "Google Sans Flex", sans-serif;
+}
+
+.slogan {
+    color: #B7E3F6;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.text-info {
+    color: #EDF8FD;
+    font-weight: 400;
+}
+
+.button-blue {
+    width: 200px;
+    height: 57px;
+    font-size: 16px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 700;
+}
+
+/*
+
+<div class="shadow-box">
+    <!-- Parte do ícone + título do card -->
+    <div class = "card-title">
+        <img src="../assets/icons/key.svg" alt="Ícone representando o CPF como chave">
+        <h3>Entre com seu CPF</h3>
+    </div>
+    <!-- Parte do texto do card -->
+    <div class = "card-text">
+        <p>Ele será utilizado para que você acompanhe o progresso dos reparos que solicitou!</p>
+    </div>
+    <!-- Parte dinâmica para o botão ou aviso -->
+    <div>
+    </div>
+</div>
+
+*/
+
+section {
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 32px;
+    gap: 15px;
+}
+
+.card-title {
+    color: #0E506C;
+    font-weight: 500;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+
+.card-title img {
+    width: 35px;
+}
+
+.card-text {
+    font-size: 16px;
+    max-width: 295px;
+}
+
+.shadow-box {
+    padding-left: 30px;
+    padding-top: 24px;
+    padding-right: 30px;
+    padding-bottom: 24px;
+    padding: 24px 30px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Google Sans Flex", sans-serif;
+    width: max-content;
+    gap: 17px;
+}
