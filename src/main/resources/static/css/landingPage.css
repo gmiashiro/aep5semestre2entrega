@@ -1,3 +1,11 @@
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
 .blue-container {
     background-color: #072836;
     position: relative;
@@ -65,9 +73,6 @@
 }
 
 .button-blue {
-    width: 200px;
-    height: 57px;
-    font-size: 16px;
     border-radius: 9px;
     display: flex;
     flex-direction: row;
@@ -76,26 +81,29 @@
     font-weight: 700;
 }
 
-/*
+.button-blue:hover {
+    cursor: pointer;
+}
 
-<div class="shadow-box">
-    <!-- Parte do ícone + título do card -->
-    <div class = "card-title">
-        <img src="../assets/icons/key.svg" alt="Ícone representando o CPF como chave">
-        <h3>Entre com seu CPF</h3>
-    </div>
-    <!-- Parte do texto do card -->
-    <div class = "card-text">
-        <p>Ele será utilizado para que você acompanhe o progresso dos reparos que solicitou!</p>
-    </div>
-    <!-- Parte dinâmica para o botão ou aviso -->
-    <div>
-    </div>
-</div>
+.text-button {
+    width: 200px;
+    height: 57px;
+    font-size: 16px;
+}
 
-*/
+.card-button {
+    width: 180px;
+    height: 44px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.card-button-container {
+    align-self: center;
+}
 
 section {
+    margin-top: 60px;
     margin-left: 70px;
     display: flex;
     flex-direction: column;
@@ -125,13 +133,18 @@ section {
 .card-text {
     font-size: 16px;
     max-width: 295px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.card-text span {
+    color: #1CB02A;
+    font-weight: 600;
+    margin-top: 5px;
 }
 
 .shadow-box {
-    padding-left: 30px;
-    padding-top: 24px;
-    padding-right: 30px;
-    padding-bottom: 24px;
     padding: 24px 30px;
     display: flex;
     flex-direction: column;
