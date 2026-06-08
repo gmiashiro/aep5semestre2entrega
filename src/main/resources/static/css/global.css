@@ -9,11 +9,22 @@ body {
 
 header {
     height: 94px;
-    width: max-content;
+    width: 100%;
     background-color: #F8F9FA;
     border-bottom: solid 2px #0E506C;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    font-size: 48px;
+    margin-left: 70px;
+}
+
+.header-buttons {
+    margin-right: 70px;
 }
 
 button {
@@ -42,6 +53,15 @@ a {
     width: 53px;
     height: 53px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-back-container {
+    position: absolute;
+    top: 20px;
+    left: 70px;
 }
 
 .button-back {
@@ -53,7 +73,6 @@ a {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    z-index: -1;
 }
 
 .button-back img {
