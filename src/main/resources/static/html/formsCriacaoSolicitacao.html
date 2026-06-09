@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/formularios.css">
+    <link rel="stylesheet" href="../css/formsCriacaoSolicitacao.css">
+    <title>Criar Solicitação - ObservaAção</title>
+</head>
+<body>
+    <header>
+        <!-- Parte da LOGO -->
+        <div class="header-logo">
+            <a href="./loginMorador.html" class="logo">ObservaAção</a>
+            <a href="./landingPage.html" class="header-button">Como usar?</a>
+        </div>
+        <!-- Parte do botão do perfil do usuário -->
+        <div class="header-profile">
+            <button class="profile-button">
+                <img src="../assets/icons/userProfile.svg" alt="Ícone de perfil do usuário">
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="button-back-container">
+            <a href="" class="button-back">
+                <img src="../assets/icons/arrowLeft.svg" alt="Ícone de uma seta para voltar">
+                Voltar</a>
+        </div>
+        <div>
+            <div class="shadow-box">
+                <div>
+                    <h2>Preencha os dados abaixo para criar uma solicitação:</h2>
+                </div>
+                <div class="box-main-container">
+                    <div class="box-main-img">
+                        <img src="../assets/images/userPaper.svg" alt="Morador olhando um papel de solicitação">
+                    </div>
+                    <form class="form-body">
+                        <div class="form-body-inputs">
+                            <div class="input-container">
+                                <label for="" class="input-label">Título:</label>
+                                <input name="" placeholder="Ex: Poste com a lâmpada queimada" class="input-box">
+                            </div>
+                            <div class="input-container">
+                                <label for="" class="input-label">Descrição do problema:</label>
+                                <textarea name="" id="" placeholder="Escreva um breve relato sobre o problema" class="input-box" maxlength="500" wrap="soft"></textarea>
+                            </div>
+                            <div class="address-input-container">
+                                <div class="address-input-first">
+                                    <div class="input-container">
+                                        <label for="" class="input-label">Rua:</label>
+                                        <input name="" placeholder="Nome da rua" class="input-box medium-size">
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="" class="input-label">Número:</label>
+                                        <input name="" placeholder="N° 1234" class="input-box small-size" type="number">
+                                    </div>
+                                </div>
+                                <div class="input-container">
+                                    <label for="" class="input-label">Bairro:</label>
+                                    <input name="" placeholder="Nome do bairro" class="input-box">
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label for="" class="input-label">Categoria da solicitação:</label>
+                                <div>
+                                    <select name="" id="" class="input-box select">
+                                        <option value="">Selecione a categoria</option>
+                                        <option value="iluminação">Iluminação</option>
+                                        <option value="asfalto">Asfalto</option>
+                                        <option value="grama">Grama</option>
+                                        <option value="ponto de ônibus">Ponto de ônibus</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label for="" class="input-label">Prioridade da solicitação:</label>
+                                <div>
+                                    <select name="" id="" class="input-box select">
+                                        <option value="">Selecione a prioridade</option>
+                                        <option value="iluminação">Baixa</option>
+                                        <option value="asfalto">Normal</option>
+                                        <option value="grama">Alta</option>
+                                        <option value="ponto de ônibus">Urgente</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="green-button">Criar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
