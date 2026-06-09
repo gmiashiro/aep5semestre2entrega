@@ -1,0 +1,124 @@
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 84px;
+}
+
+.shadow-box {
+    width: 946px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 34px;
+    padding-bottom: 54px;
+    margin-bottom: 100px;
+}
+
+.box-main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    align-items: center;
+}
+
+.input-label {
+    font-size: 20px;
+}
+
+.input-box {
+    font-size: 15px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    width: 414px;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    align-items: center;
+}
+
+.form-body-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.address-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.address-input-container .input-box {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.address-input-first {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.medium-size {
+    width: 291px;
+}
+
+.small-size {
+    width: 89px;
+}
+
+.select {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 18px;
+    width: max-content;
+}
+
+select,
+::picker(select) {
+    appearance: base-select;
+}
+
+::picker-icon {
+    margin-left: 30px;
+}
+
+option {
+    padding: 9px;
+    background-color: #EDF3F6;
+    border-left: solid 2px #1578A2;
+    border-right: solid 2px #1578A2;
+    
+}
+
+option:first-of-type {
+    border-radius: 9px 9px 0 0;
+    border-top: solid 2px #1578A2;
+}
+
+option:last-of-type {
+    border-radius: 0 0 9px 9px;
+    border-bottom: solid 2px #1578A2;
+}
+
+::picker(select) {
+    border-radius: 9px;
+}
+
+::checkmark {
+    padding-left: 10px;
+}
+
+.green-button {
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #F6F8F9;
+    background-color: #137C1E;
+    border-radius: 9px;
+    padding: 19px 92px;
+}

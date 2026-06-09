@@ -1,0 +1,339 @@
+main {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.shadow-box {
+    font-family: "Google Sans Flex", sans-serif;
+    color: #020D12;
+    padding: 20px;
+}
+
+.icon {
+    width: 12px;
+}
+
+/* Primeira linha */
+
+.first-line-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 400;
+    gap: 130px;
+}
+
+.first-line-number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+}
+
+.class-icon {
+    width: max-content;
+    height: max-content;
+    border: solid 1px;
+    border-radius: 7px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.class-icon img {
+    width: 17px;
+    height: 17px;
+}
+
+.first-line-number span {
+    font-size: 14px;
+}
+
+.round-container {
+    padding: 3px 7px;
+    border-radius: 100px;
+}
+
+.status {
+    border: solid 1px;
+    font-size: 11px;
+}
+
+/* Segunda linha */
+
+.second-line-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 10px;
+}
+
+.deadline-box {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    background-color: #F5B7B7;
+    font-weight: 400;
+}
+
+.deadline-box img {
+    width: 9px;
+}
+
+/* Terceira linha */
+
+h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.third-line-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+}
+
+.third-line-address-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 200;
+}
+
+/* Quarta linha */
+
+.fourth-line-container {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.progress {
+    width: 100%;
+    height: 9px;
+    background-color: #DEE2E6;
+    border-radius: 9px;
+}
+
+.progress-fill {
+    height: 100%;
+}
+
+/* Quinta linha */
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #020D12;
+}
+
+/* Sexta linha */
+
+.sixth-line-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 13px;
+    font-size: 12px;
+    gap: 15px;
+}
+
+.text-title {
+    font-weight: 600;
+    color: #495057;
+}
+
+.text-info {
+    font-weight: 300;
+    color: #020D12;
+    margin-left: 5px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.employee-info-container {
+    margin-left: 10px;
+    margin-top: 4px;
+    color: #343A40;
+    font-weight: 200;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Sétima linha */
+
+.seventh-line-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 200;
+    color: #020D12;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.deadline-text {
+    font-weight: 300;
+}
+
+.iconDate {
+    width: 14px;
+}
+
+/* ======================================== */
+/* ESTILOS INTERATIVOS */
+/* ======================================== */
+
+/* Para a barra de progresso */
+.fill-25 {
+    width: 25%;
+    border-radius: 9px 0px 0px 9px;
+}
+
+.fill-50 {
+    width: 50%;
+    border-radius: 9px 0px 0px 9px;
+}
+
+.fill-75 {
+    width: 75%;
+    border-radius: 9px 0px 0px 9px;
+}
+
+.fill-100 {
+    width: 100%;
+    border-radius: 9px;
+}
+
+/* Para o fundo dos cards */
+
+.yellow-card-background {
+    background-color: #F8F9FA;
+    box-shadow: 0px 6px 12px rgba(228, 221, 27, 0.46);
+}
+
+.red-card-background {
+    background-color: #FBF5F5;
+    box-shadow: 0px 6px 9px rgba(223, 30, 30, 0.32);
+}
+
+.green-card-background {
+    background-color: #EFFFF1;
+    box-shadow: 0px 6px 9px rgba(33, 211, 21, 0.47);
+}
+
+.blue-card-background {
+    background-color: #F0F5FA;
+    box-shadow: 0px 6px 10px rgba(28, 163, 219, 0.59);
+}
+
+/* Para os ícones de classificação */
+
+.light {
+    border-color: #E4DD1B;
+    box-shadow: 0px 1px 3px #E4DD1B;
+}
+
+.road {
+    border-color: #576165;
+    box-shadow: 0px 1px 3px #576165;
+}
+
+.grass {
+    border-color: #21D333;
+    box-shadow: 0px 1px 3px #21D333;
+}
+
+.bus {
+    border-color: #1CA3DB;
+    box-shadow: 0px 1px 3px #1CA3DB;
+}
+
+.other {
+    border-color: #DE771D;
+    box-shadow: 0px 1px 3px #DE771D;
+}
+
+/* Para as box de status */
+
+.done {
+    background-color: #B8F4BF;
+    border-color: #83EC8E;
+}
+
+.canceled {
+    background-color: #F5B7B7;
+    border-color: #EE8181;
+}
+
+.open {
+    background-color: #B7E3F6;
+    border-color: #81CEEF;
+}
+
+.in-progress {
+    background-color: #F6F4B6;
+    border-color: #F0EC7F;
+}
+
+/* Para a box de prioridade */
+
+.low {
+    background-color: #D2EEFA;
+}
+
+.normal {
+    background-color: #F6F4B6;
+}
+
+.high {
+    background-color: #FAE3D0;
+}
+
+.urgent {
+    background-color: #F5B7B7;
+}
+
+/* Para as barras de progresso */
+
+.yellow-progress-bar {
+    background-color: #E4DD1B;
+}
+
+.red-progress-bar {
+    background-color: #DF1E1E;
+}
+
+.green-progress-bar {
+    background-color: #4FE35D;
+}
+
+.blue-progress-bar {
+    background-color: #1CA3DB;
+}

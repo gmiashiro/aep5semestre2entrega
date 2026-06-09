@@ -1,11 +1,28 @@
+textarea {
+    resize: vertical;
+}
+
+h2 {
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.box-main-img img {
+    width: 358px;
+    height: 448px;
+}
+
 .form-body {
     font-family: "Google Sans Flex", sans-serif;
     color: #020D12;
     margin-top: 50px;
 }
 
-input {
-    padding-left: 18px;
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .input-label {
@@ -20,7 +37,7 @@ input {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: italic;
-    font-size: 18px;
+    padding-left: 18px;
 }
 
 .input-sucess {
