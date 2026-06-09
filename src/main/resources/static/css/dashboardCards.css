@@ -3,3 +3,199 @@ main {
     justify-content: center;
     padding-top: 200px;
 }
+
+.shadow-box {
+    font-family: "Google Sans Flex", sans-serif;
+    color: #020D12;
+    padding: 20px;
+}
+
+.icon {
+    width: 12px;
+}
+
+/* Primeira linha */
+
+.first-line-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 400;
+    gap: 130px;
+}
+
+.first-line-number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+}
+
+.class-icon {
+    width: max-content;
+    height: max-content;
+    border: solid 1px;
+    border-radius: 7px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.class-icon img {
+    width: 17px;
+    height: 17px;
+}
+
+.first-line-number span {
+    font-size: 14px;
+}
+
+.round-container {
+    padding: 3px 7px;
+    border-radius: 100px;
+    border: solid 1px;
+}
+
+.status {
+    font-size: 11px;
+}
+
+/* Segunda linha */
+
+.second-line-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 10px;
+}
+
+.deadline-box {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.deadline-box img {
+    width: 9px;
+}
+
+/* Terceira linha */
+
+h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.third-line-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+}
+
+.third-line-address-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 200;
+}
+
+/* Quarta linha */
+
+.fourth-line-container {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.progress {
+    width: 100%;
+    height: 9px;
+    background-color: #DEE2E6;
+    border-radius: 9px;
+}
+
+/* Quinta linha */
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #020D12;
+}
+
+/* Sexta linha */
+
+.sixth-line-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 13px;
+    font-size: 12px;
+    gap: 15px;
+}
+
+.text-title {
+    font-weight: 600;
+    color: #495057;
+}
+
+.text-info {
+    font-weight: 300;
+    color: #020D12;
+    margin-left: 5px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.employee-info-container {
+    margin-left: 10px;
+    margin-top: 4px;
+    color: #343A40;
+    font-weight: 200;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Sétima linha */
+
+.seventh-line-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 200;
+    color: #020D12;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.deadline-text {
+    font-weight: 300;
+}
+
+.iconDate {
+    width: 14px;
+}
