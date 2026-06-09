@@ -15,22 +15,11 @@ main {
     margin-bottom: 100px;
 }
 
-h2 {
-    font-family: "Google Sans Flex", sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-}
-
 .box-main-container {
     display: flex;
     flex-direction: row;
     gap: 48px;
     align-items: center;
-}
-
-.box-main-img img {
-    width: 358px;
-    height: 448px;
 }
 
 .input-label {
