@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    height: 94px;
+    height: 60px;
     width: 100%;
     background-color: #F8F9FA;
     border-bottom: solid 2px #0E506C;
@@ -19,12 +19,22 @@ header {
 }
 
 .header-logo {
-    font-size: 48px;
     margin-left: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
 }
 
-.header-buttons {
-    margin-right: 70px;
+.logo {
+    font-size: 30px;
+}
+
+.header-button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #0E506C;
+    padding-top: 7px;
 }
 
 button {
@@ -48,14 +58,23 @@ a {
     font-weight: 700;
 }
 
+.header-profile {
+    margin-right: 70px;
+    display: flex;
+}
+
 .profile-button {
     background-color: #E8EEF0;
-    width: 53px;
-    height: 53px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.profile-button img {
+    width: 25px;
 }
 
 .button-back-container {

@@ -53,12 +53,6 @@ form {
     gap: 80px;
 }
 
-.input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
 .input-container label {
     font-size: 24px;
 }
@@ -66,6 +60,7 @@ form {
 .input-box {
     width: 414px;
     height: 68px;
+    font-size: 18px;
 }
 
 .button-blue {
