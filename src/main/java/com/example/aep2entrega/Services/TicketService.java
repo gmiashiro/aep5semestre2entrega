@@ -7,6 +7,7 @@ import com.example.aep2entrega.Repositories.TicketRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class TicketService {
@@ -52,5 +53,13 @@ public class TicketService {
         ticket.setJustificativa(justificativa);
 
         return ticketRepository.save(ticket);
+    }
+
+    public List<Ticket> listarTodosTickets() {
+        return ticketRepository.findAll();
+    }
+
+    public List<Ticket> listarTicketsPorUsuario(Integer idUsuario) {
+        return ticketRepository.findByUsuarioId(idUsuario);
     }
 }
