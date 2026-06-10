@@ -1,0 +1,48 @@
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.boxes-container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.form-body {
+    margin-top: 32px;
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.input-box {
+    font-size: 15px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    width: 414px;
+}
+
+.button-blue {
+    padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 9px;
+    background-color: #0E506C;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 46px;
+}

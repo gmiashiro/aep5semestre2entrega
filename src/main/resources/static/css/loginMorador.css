@@ -12,6 +12,7 @@ main {
     align-items: center;
     padding-top: 45px;
     align-self: center;
+    margin-bottom: 50px;
 }
 
 .form-text {
