@@ -29,10 +29,12 @@
                     <div>
                         <img src="../assets/images/userSpeaking.svg" alt="Desenho de um morador falando em um megafone">
                     </div>
-                    <form>
+                    <form id="form-login-cidadao">
                         <div class="input-container">
                             <label for="inputCpf" class="input-label">CPF:</label>
-                            <input name="inputCpf" placeholder="Digite seu CPF aqui..." class="input-box">
+                            <input id="inputCpf" name="inputCpf" placeholder="Digite seu CPF aqui..." class="input-box">
+
+                            <span id="mensagem-erro" class="input-message input-message-error" style="display: none;"></span>
                         </div>
                         <div>
                             <button type="submit" class="button-blue">Acessar</button>
@@ -49,5 +51,7 @@
 
         </div>
     </main>
+
+    <script type="module" src="../javascript/loginMorador.js"></script>
 </body>
 </html>
