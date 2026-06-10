@@ -7,6 +7,7 @@ import com.example.aep2entrega.Repositories.TicketRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class TicketService {
@@ -42,5 +43,23 @@ public class TicketService {
             case Normal -> prazo.plusDays(15);
             default -> prazo.plusDays(30);
         };
+    }
+
+    public Ticket atualizarStatus(Long protocolo, StatusTicket novoStatus, String justificativa) {
+        Ticket ticket = ticketRepository.findById(protocolo)
+                .orElseThrow(() -> new RuntimeException("Solicitação não encontrada."));
+
+        ticket.setStatus(novoStatus);
+        ticket.setJustificativa(justificativa);
+
+        return ticketRepository.save(ticket);
+    }
+
+    public List<Ticket> listarTodosTickets() {
+        return ticketRepository.findAll();
+    }
+
+    public List<Ticket> listarTicketsPorUsuario(Integer idUsuario) {
+        return ticketRepository.findByUsuarioId(idUsuario);
     }
 }

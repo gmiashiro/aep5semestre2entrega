@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/tickets")
 public class TicketController {
@@ -32,5 +34,35 @@ public class TicketController {
             return ResponseEntity.ok(ticket);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{protocolo}/status")
+    public ResponseEntity<?> atualizarStatus(
+            @PathVariable Long protocolo,
+            @RequestBody Ticket dadosAtualizacao) {
+        try {
+            Ticket ticketAtualizado = ticketService.atualizarStatus(protocolo, dadosAtualizacao.getStatus(), dadosAtualizacao.getJustificativa());
+            return ResponseEntity.ok(ticketAtualizado);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Ticket>> listarTodosTickets() {
+        List<Ticket> tickets = ticketService.listarTodosTickets();
+        if (tickets.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(tickets);
+    }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<Ticket>> listarTicketsCidadao(@PathVariable Integer idUsuario) {
+        List<Ticket> tickets = ticketService.listarTicketsPorUsuario(idUsuario);
+        if (tickets.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(tickets);
     }
 }

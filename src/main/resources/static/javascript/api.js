@@ -43,5 +43,21 @@ export const api = {
             console.error("Erro na requisição GET:", error);
             throw error;
         }
-    }
+    },
+
+    async put(endpoint, body) {
+        try {
+            const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+            return response;
+        } catch (error) {
+            console.error("Erro na requisição PUT:", error);
+            throw error;
+        }
+    },
 };

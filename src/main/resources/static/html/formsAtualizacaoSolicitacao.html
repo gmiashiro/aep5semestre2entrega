@@ -146,23 +146,23 @@
                     <div>
                         <span class="form-title">Escolha um novo status e escreva uma justificativa sobre.</span>
                     </div>
-                    <form class="form-body">
+                    <form id="form-atualizacao" class="form-body">
                         <div class="form-inputs">
                             <div class="input-container">
-                                <label for="" class="input-label">Novo status:</label>
+                                <label for="novo-status" class="input-label">Novo status:</label>
                                 <div>
-                                    <select name="" id="" class="input-box select">
+                                    <select name="novo-status" id="novo-status" class="input-box select">
                                         <option value="">Selecione o status</option>
-                                        <option value="triagem">Triagem</option>
-                                        <option value="em andamento">Em andamento</option>
-                                        <option value="resolvido">Resolvido</option>
-                                        <option value="fechado">Fechado</option>
+                                        <option value="2">Triagem</option>
+                                        <option value="3">Em andamento</option>
+                                        <option value="4">Resolvido</option>
+                                        <option value="5">Fechado</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="input-container">
-                                <label for="" class="input-label">Justificativa:</label>
-                                <textarea name="" id="" placeholder="Escreva uma justificativa referente ao novo status" class="input-box" maxlength="500" wrap="soft"></textarea>
+                                <label for="justificativa" class="input-label">Justificativa:</label>
+                                <textarea name="justificativa" id="justificativa" placeholder="Escreva uma justificativa referente ao novo status" class="input-box" maxlength="500" wrap="soft"></textarea>
                             </div>
                         </div>
                         <div class="button-container">
@@ -179,6 +179,8 @@
     <footer>
 
     </footer>
+
+    <script type="module" src="../javascript/atualizacaoSolicitacao.js"></script>
     <script src="../javascript/profileWindow.js"></script>
 </body>
 </html>
