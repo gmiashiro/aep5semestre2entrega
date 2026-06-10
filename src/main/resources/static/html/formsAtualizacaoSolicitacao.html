@@ -7,98 +7,160 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/formularios.css">
     <link rel="stylesheet" href="../css/dashboardCards.css">
+    <link rel="stylesheet" href="../css/formsAtualizacaoSolicitacao.css">
     <title>Atualização de Solicitação - ObservaAção</title>
 </head>
 <body>
+    <header>
+        <!-- Parte da LOGO -->
+        <div class="header-logo">
+            <a href="./landingPage.html" class="logo">ObservaAção</a>
+            <a href="./landingPage.html" class="header-button">Como usar?</a>
+        </div>
+        <!-- Parte do botão do perfil do usuário -->
+        <div class="header-profile">
+            <button class="profile-button">
+                <img src="../assets/icons/userProfile.svg" alt="Ícone de perfil do usuário">
+            </button>
+        </div>
+    </header>
     <main>
-        <!-- CARD -->
-        <div class="shadow-box yellow-card-background">
-            <!-- Primeira linha -->
-            <div class="first-line-container">
-                <div class="first-line-number">
-                    <div class="class-icon light">
-                        <img src="../assets/icons/light.svg" alt="Ícone da classificação de iluminação">
+        <div class="button-back-container">
+            <a href="" class="button-back">
+                <img src="../assets/icons/arrowLeft.svg" alt="Ícone de uma seta para voltar">
+                Voltar</a>
+        </div>
+        <div>
+            <div>
+                <h1>Atualização de status de uma solicitação</h1>
+            </div>
+            <div class="boxes-container">
+                <!-- CARD -->
+                <div class="shadow-box yellow-card-background">
+                    <!-- Primeira linha -->
+                    <div class="first-line-container">
+                        <div class="first-line-number">
+                            <div class="class-icon light">
+                                <img src="../assets/icons/light.svg" alt="Ícone da classificação de iluminação">
+                            </div>
+                            <span>N° 1234</span>
+                        </div>
+                        <div class="round-container status in-progress">
+                            <span>Em andamento</span>
+                        </div>
                     </div>
-                    <span>N° 1234</span>
-                </div>
-                <div class="round-container status in-progress">
-                    <span>Em andamento</span>
-                </div>
-            </div>
 
-            <!-- Segunda linha -->
-            <div class="second-line-container">
-                <div class="round-container high">
-                    <span>Alta</span>
-                </div>
-                <div class="round-container deadline-box">
-                    <img src="../assets/icons/alarmBlack.svg" alt="Ícone de despertador">
-                    <span>Falta 10 dias</span>
-                </div>
-            </div>
+                    <!-- Segunda linha -->
+                    <div class="second-line-container">
+                        <div class="round-container high">
+                            <span>Alta</span>
+                        </div>
+                        <div class="round-container deadline-box">
+                            <img src="../assets/icons/alarmBlack.svg" alt="Ícone de despertador">
+                            <span>Falta 10 dias</span>
+                        </div>
+                    </div>
 
-            <!-- Terceira linha -->
-            <div class="third-line-container">
-                <div>
-                    <h4>Poste sem lâmpada</h4>
-                </div>
-                <div class="third-line-address-container">
-                    <img src="../assets/icons/adress.svg" alt="Ícone de localização" class="icon">
-                    <span>Rua teste, 1234</span>
-                </div>
-            </div>
+                    <!-- Terceira linha -->
+                    <div class="third-line-container">
+                        <div>
+                            <h4>Poste sem lâmpada</h4>
+                        </div>
+                        <div class="third-line-address-container">
+                            <img src="../assets/icons/adress.svg" alt="Ícone de localização" class="icon">
+                            <span>Rua teste, 1234</span>
+                        </div>
+                    </div>
 
-            <!-- Quarta linha -->
-            <div class="fourth-line-container">
-                <div class="label-container">
-                    <span>Progresso</span>
-                    <span>Etapa 3 de 4</span>
-                </div>
-                <div>
-                    <div class="progress">
-                        <div class="progress-fill fill-75 yellow-progress-bar"></div>
+                    <!-- Quarta linha -->
+                    <div class="fourth-line-container">
+                        <div class="label-container">
+                            <span>Progresso</span>
+                            <span>Etapa 3 de 4</span>
+                        </div>
+                        <div>
+                            <div class="progress">
+                                <div class="progress-fill fill-75 yellow-progress-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quinta linha -->
+                    <hr>
+
+                    <!-- Sexta linha -->
+                    <div class="sixth-line-container">
+                        <div class="text-container">
+                            <span class="text-title">Descrição:</span>
+                            <span class="text-info">Uai a descrição vai aqui</span>
+                        </div>
+                        <div>
+                            <div class="text-container">
+                                <span class="text-title">Justificativa:</span>
+                                <span class="text-info">Uai a justificativa vai aqui</span>
+                            </div>
+                            <div class="employee-info-container">
+                                <img src="../assets/icons/employee.svg" alt="Ícone de um funcionário" class="icon">
+                                <span>Responsável: Robson</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sétima linha -->
+                    <div class="seventh-line-container">
+                        <div class="date-container">
+                            <img src="../assets/icons/timeCreated.svg" alt="Ícone para a data de criação" class="iconDate">
+                            <span>Criado em: 10/10/2023</span>
+                        </div>
+                        <div class="date-container">
+                            <img src="../assets/icons/timeUpdated.svg" alt="Ícone para a data de atualização" class="iconDate">
+                            <span>Atualizado em: 10/10/2023</span>
+                        </div>
+                        <div class="date-container">
+                            <img src="../assets/icons/alarmGrey.svg" alt="Ícone para o fim do prazo de resolução" class="iconDate">
+                            <span class="deadline-text">Prazo de resolução: 10/10/2023</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Quinta linha -->
-            <hr>
-
-            <!-- Sexta linha -->
-            <div class="sixth-line-container">
-                <div class="text-container">
-                    <span class="text-title">Descrição:</span>
-                    <span class="text-info">Uai a descrição vai aqui</span>
-                </div>
-                <div>
-                    <div class="text-container">
-                        <span class="text-title">Justificativa:</span>
-                        <span class="text-info">Uai a justificativa vai aqui</span>
+                <!-- fim do card -->
+                <div class="shadow-box ">
+                    <div>
+                        <span class="form-title">Escolha um novo status e escreva uma justificativa sobre.</span>
                     </div>
-                    <div class="employee-info-container">
-                        <img src="../assets/icons/employee.svg" alt="Ícone de um funcionário" class="icon">
-                        <span>Responsável: Robson</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sétima linha -->
-            <div class="seventh-line-container">
-                <div class="date-container">
-                    <img src="../assets/icons/timeCreated.svg" alt="Ícone para a data de criação" class="iconDate">
-                    <span>Criado em: 10/10/2023</span>
-                </div>
-                <div class="date-container">
-                    <img src="../assets/icons/timeUpdated.svg" alt="Ícone para a data de atualização" class="iconDate">
-                    <span>Atualizado em: 10/10/2023</span>
-                </div>
-                <div class="date-container">
-                    <img src="../assets/icons/alarmGrey.svg" alt="Ícone para o fim do prazo de resolução" class="iconDate">
-                    <span class="deadline-text">Prazo de resolução: 10/10/2023</span>
+                    <form class="form-body">
+                        <div class="form-inputs">
+                            <div class="input-container">
+                                <label for="" class="input-label">Novo status:</label>
+                                <div>
+                                    <select name="" id="" class="input-box select">
+                                        <option value="">Selecione o status</option>
+                                        <option value="triagem">Triagem</option>
+                                        <option value="em andamento">Em andamento</option>
+                                        <option value="resolvido">Resolvido</option>
+                                        <option value="fechado">Fechado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <label for="" class="input-label">Justificativa:</label>
+                                <textarea name="" id="" placeholder="Escreva uma justificativa referente ao novo status" class="input-box" maxlength="500" wrap="soft"></textarea>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button class="button-blue" type="submit">Atualizar</button>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
+        
+        
     </main>
+    <footer>
+
+    </footer>
 </body>
 </html>

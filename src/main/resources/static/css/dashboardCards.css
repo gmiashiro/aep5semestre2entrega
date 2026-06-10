@@ -1,12 +1,15 @@
-main {
-    display: flex;
-    justify-content: center;
-    padding-top: 200px;
-}
-
 .shadow-box {
     font-family: "Google Sans Flex", sans-serif;
     color: #020D12;
+    width: max-content;
+    cursor: pointer;
+}
+
+.reduced-card {
+    padding: 20px 20px 10px 20px;
+}
+
+.expanded-card {
     padding: 20px;
 }
 
@@ -142,6 +145,15 @@ hr {
     background-color: #020D12;
 }
 
+.fifth-line-expand-container {
+    margin-top: 20px;
+    font-size: 11px;
+    font-weight: 200;
+    color: #020D12;
+    display: flex;
+    justify-content: center;
+}
+
 /* Sexta linha */
 
 .sixth-line-container {
@@ -184,6 +196,7 @@ hr {
 
 .seventh-line-container {
     margin-top: 20px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -204,6 +217,46 @@ hr {
 
 .iconDate {
     width: 14px;
+}
+
+/* ======================================== */
+/* ÁREA DE EXPANSÃO */
+/* ======================================== */
+
+.extra-content-wrapper {
+    overflow: hidden;
+}
+
+.extra-content {
+    opacity: 0;
+
+    display: grid;
+    grid-template-rows: 0fr;
+
+    transition:
+        grid-template-rows .3s ease,
+        opacity .2s ease;
+}
+
+.shadow-box:hover .extra-content,
+.shadow-box.expanded .extra-content {
+    opacity: 1;
+    grid-template-rows: 1fr;
+}
+
+
+.fifth-line-expand-container {
+    max-height: 30px;
+    opacity: 1;
+    overflow: hidden;
+
+    transition: all .2s ease;
+}
+
+.shadow-box:hover .fifth-line-expand-container,
+.shadow-box.expanded .fifth-line-expand-container {
+    max-height: 0;
+    opacity: 0;
 }
 
 /* ======================================== */
@@ -238,20 +291,43 @@ hr {
     box-shadow: 0px 6px 12px rgba(228, 221, 27, 0.46);
 }
 
+.yellow-card-background:hover {
+    box-shadow: 0px 7px 14px 3px rgba(228, 221, 27, 0.65);
+    transition: .2s ease;
+}
+
 .red-card-background {
     background-color: #FBF5F5;
     box-shadow: 0px 6px 9px rgba(223, 30, 30, 0.32);
 }
+
+.red-card-background:hover {
+    box-shadow: 0px 7px 11px 3px rgba(228, 221, 27, 0.52);
+    transition: .2s ease;
+}
+
 
 .green-card-background {
     background-color: #EFFFF1;
     box-shadow: 0px 6px 9px rgba(33, 211, 21, 0.47);
 }
 
+.green-card-background:hover {
+    box-shadow: 0px 7px 11px 3px rgba(228, 221, 27, 0.67);
+    transition: .2s ease;
+}
+
+
 .blue-card-background {
     background-color: #F0F5FA;
     box-shadow: 0px 6px 10px rgba(28, 163, 219, 0.59);
 }
+
+.blue-card-background:hover {
+    box-shadow: 0px 7px 12px 3px rgba(228, 221, 27, 0.79);
+    transition: .2s ease;
+}
+
 
 /* Para os ícones de classificação */
 
