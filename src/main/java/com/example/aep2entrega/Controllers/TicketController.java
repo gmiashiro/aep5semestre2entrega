@@ -33,4 +33,16 @@ public class TicketController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @PutMapping("/{protocolo}/status")
+    public ResponseEntity<?> atualizarStatus(
+            @PathVariable Long protocolo,
+            @RequestBody Ticket dadosAtualizacao) {
+        try {
+            Ticket ticketAtualizado = ticketService.atualizarStatus(protocolo, dadosAtualizacao.getStatus(), dadosAtualizacao.getJustificativa());
+            return ResponseEntity.ok(ticketAtualizado);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }

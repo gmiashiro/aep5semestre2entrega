@@ -43,4 +43,14 @@ public class TicketService {
             default -> prazo.plusDays(30);
         };
     }
+
+    public Ticket atualizarStatus(Long protocolo, StatusTicket novoStatus, String justificativa) {
+        Ticket ticket = ticketRepository.findById(protocolo)
+                .orElseThrow(() -> new RuntimeException("Solicitação não encontrada."));
+
+        ticket.setStatus(novoStatus);
+        ticket.setJustificativa(justificativa);
+
+        return ticketRepository.save(ticket);
+    }
 }

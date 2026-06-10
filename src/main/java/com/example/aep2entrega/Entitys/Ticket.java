@@ -36,6 +36,16 @@ public class Ticket {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
+    private String justificativa;
+
+    public String getJustificativa() {
+        return justificativa;
+    }
+
+    public void setJustificativa(String justificativa) {
+        this.justificativa = justificativa;
+    }
+
     public Long getProtocolo() {
         return protocolo;
     }
