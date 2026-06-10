@@ -14,7 +14,7 @@
     <header>
         <!-- Parte da LOGO -->
         <div class="header-logo">
-            <a href="" class="logo">ObservaAção</a>
+            <a href="./dashboardFuncionario.html" class="logo">ObservaAção</a>
             <a href="./loginFuncionario.html" class="header-button">Acesso de funcionário</a>
         </div>
         <!-- Parte do botão do perfil do usuário -->
@@ -22,6 +22,23 @@
             <button class="profile-button">
                 <img src="../assets/icons/userProfile.svg" alt="Ícone de perfil do usuário">
             </button>
+            <div class="shadow-box profile-window-container window-hidden">
+                <div class="exit-button-container">
+                    <button class="exit-button">
+                        <img src="../assets/icons/error.svg" alt="Ícone de fechar">
+                    </button>
+                </div>
+                <div class="profile-window-info-container">
+                    <span class="profile-window-title">Perfil</span>
+                    <div class="profile-window-data">
+                        <img src="../assets/icons/userProfile.svg" alt="Ícone de perfil do usuário">
+                        <span>CPF: 123.123.123-12</span>
+                    </div>
+                </div>
+                <div class="exit-all-button-container">
+                    <button class="exit-all-button">Sair do sistema</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -75,7 +92,7 @@
             <!-- Parte do container dos cards -->
             <div class="cards-container">
                 <!-- CARD 1 -->
-                <div class="shadow-box">
+                <div class="shadow-box card-body">
                     <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/key.svg" alt="Ícone representando o CPF como chave">
@@ -91,8 +108,8 @@
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="shadow-box">
-                    <!-- Parte do ícone + título do card -->
+                <div class="shadow-box card-body">
+             <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/cursorFinger.svg" alt="Ícone representando um clique">
                         <h3>Clique em Criar Solicitação</h3>
@@ -112,8 +129,8 @@
                 </div>
 
                 <!-- CARD 3 -->
-                <div class="shadow-box">
-                    <!-- Parte do ícone + título do card -->
+                <div class="shadow-box card-body">
+             <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/pencil.svg" alt="Ícone de um lápis">
                         <h3>Preencha os dados</h3>
@@ -136,8 +153,8 @@
             <!-- Parte do container dos cards -->
             <div class="cards-container">
                 <!-- CARD 1 -->
-                <div class="shadow-box">
-                    <!-- Parte do ícone + título do card -->
+                <div class="shadow-box card-body">
+             <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/key.svg" alt="Ícone representando o CPF como chave">
                         <h3>Entre com seu CPF</h3>
@@ -153,8 +170,8 @@
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="shadow-box">
-                    <!-- Parte do ícone + título do card -->
+                <div class="shadow-box card-body">
+             <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/listCheck.svg" alt="Ícone representando uma lista de solicitações">
                         <h3>Menu de solicitações</h3>
@@ -176,8 +193,8 @@
             <!-- Parte do container dos cards -->
             <div class="cards-container">
                 <!-- CARD 1 -->
-                <div class="shadow-box">
-                    <!-- Parte do ícone + título do card -->
+                <div class="shadow-box card-body">
+             <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/alarmBlue.svg" alt="Ícone representando o prazo de resolução">
                         <h3>Prazo de resolução</h3>
@@ -189,8 +206,8 @@
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="shadow-box">
-                    <!-- Parte do ícone + título do card -->
+                <div class="shadow-box card-body">
+             <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/progress.svg" alt="Ícone representando o progresso de uma solicitação">
                         <h3>Progresso</h3>
@@ -202,8 +219,8 @@
                 </div>
 
                 <!-- CARD 3 -->
-                <div class="shadow-box">
-                    <!-- Parte do ícone + título do card -->
+                <div class="shadow-box card-body">
+             <!-- Parte do ícone + título do card -->
                     <div class="card-title">
                         <img src="../assets/icons/text.svg" alt="Ícone representando o texto de justificativa">
                         <h3>Justificativa</h3>
@@ -221,6 +238,7 @@
 
     </footer>
 
+    <script type="module" src="../javascript/profileWindowLandingPage.js"></script>
     <script type="module" src="../javascript/landingPage.js"></script>
 </body>
 </html>

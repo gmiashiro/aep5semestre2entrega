@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll(".shadow-box");
+const cards = document.querySelectorAll(".card");
 
 cards.forEach(card => {
     card.addEventListener("click", () => {

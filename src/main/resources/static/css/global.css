@@ -118,3 +118,80 @@ footer {
     border-top: solid 2px #0E506C;
     margin-top: 120px;
 }
+
+.header-profile {
+    position: relative;
+}
+
+.profile-window-container {
+    display: flex;
+    /* margin-top: 276px; */
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    padding: 29px 31px 16px 31px;
+    border: none;
+    position: absolute;
+    top: calc(100% + 16px);
+    right: 0;
+    z-index: 1000;
+    width: max-content;
+}
+
+.exit-button-container {
+    position: absolute;
+    left: 238px;
+    bottom: 162px;
+}
+
+.exit-button:hover {
+    cursor: pointer;
+}
+
+.exit-button-container button img {
+    width: 23px;
+}
+
+.profile-window-info-container {
+    font-weight: 600;
+    color: #0E506C;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.profile-window-title {
+    font-size: 20px;
+}
+
+.profile-window-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+    margin-left: 13px;
+    font-size: 15px;
+}
+
+.profile-window-data img {
+    width: 15px;
+}
+
+.exit-all-button-container {
+    margin-top: 45px;
+}
+
+.exit-all-button {
+    background-color: #DF1E1E;
+    color: #F6F8F9;
+    font-weight: 700;
+    padding: 12px 43px;
+    border-radius: 9px;
+}
+
+.exit-all-button:hover {
+    cursor: pointer;
+}
+
+.window-hidden {
+    display: none;
+}

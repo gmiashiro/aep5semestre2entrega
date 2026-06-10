@@ -1,3 +1,4 @@
+import { toggleProfileWindowLanding } from "./profileWindowLandingPage.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnPerfil) {
         btnPerfil.addEventListener('click', () => {
             if (usuarioLogado) {
+                toggleProfileWindowLanding();
                 const desejaSair = confirm("Deseja sair da sua conta ObservaAção?");
                 if (desejaSair) {
                     localStorage.removeItem('usuarioLogado');
