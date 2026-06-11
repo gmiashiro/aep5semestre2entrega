@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cidadao = await response.json();
 
                     localStorage.setItem('usuarioLogado', JSON.stringify(cidadao));
+                    localStorage.setItem('cpfUsuario', JSON.stringify(cpfLimpo));
 
                     window.location.href = 'landingPage.html';
                 } else {
