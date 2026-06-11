@@ -19,6 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const botoaoAcessarPainel = document.querySelector('.acess-dashboard');
+
+    botoaoAcessarPainel.addEventListener("click", () => {
+        if (usuarioLogado) {
+            window.location.href = 'dashboardMorador.html';
+        } else {
+            window.location.href = 'loginMorador.html';
+        }
+    })
+
     const btnPerfil = document.querySelector('.profile-button');
 
     if (btnPerfil) {

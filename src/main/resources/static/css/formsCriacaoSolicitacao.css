@@ -5,7 +5,7 @@ main {
     padding-top: 84px;
 }
 
-.shadow-box {
+.form-box {
     width: 946px;
     display: flex;
     flex-direction: column;

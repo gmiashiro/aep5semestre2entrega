@@ -152,3 +152,9 @@ section {
     width: max-content;
     gap: 17px;
 }
+
+.action-buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
