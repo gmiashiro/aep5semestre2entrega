@@ -1,25 +1,41 @@
 package com.example.aep2entrega.Controllers;
 
+import com.example.aep2entrega.Entitys.Cidadao;
 import com.example.aep2entrega.Entitys.Ticket;
+import com.example.aep2entrega.Repositories.CidadaoRepository;
 import com.example.aep2entrega.Services.TicketService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/tickets")
+@CrossOrigin(origins = "http://localhost:63342")
 public class TicketController {
 
     private final TicketService ticketService;
+    private final CidadaoRepository cidadaoRepository;
 
-    public TicketController(TicketService ticketService) {
+    public TicketController(TicketService ticketService, CidadaoRepository cidadaoRepository) {
         this.ticketService = ticketService;
+        this.cidadaoRepository = cidadaoRepository;
     }
 
-    @PostMapping
-    public ResponseEntity<Ticket> criarTicket(@RequestBody Ticket ticket) {
+    @PostMapping("/usuario/{idUsuario}")
+    public ResponseEntity<?> criarTicket(@RequestBody Ticket ticket, @PathVariable Integer idUsuario) {
+
+        Optional<Cidadao> criadorOp = cidadaoRepository.findById(idUsuario);
+
+        if (criadorOp.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Usuário não encontrado. A sessão pode ter expirado. Por favor, faça login novamente.");
+        }
+
+        ticket.setUsuario(criadorOp.get());
+
         Ticket novoTicket = ticketService.criarTicket(ticket);
         return ResponseEntity.status(HttpStatus.CREATED).body(novoTicket);
     }

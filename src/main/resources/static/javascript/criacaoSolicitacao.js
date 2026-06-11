@@ -31,17 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const ticket = {
                 titulo: titulo,
                 descricao: descricao,
-                localizacaoEndereco: `${rua}, ${numero}`,
+                rua: rua,
+                numero: numero,
                 bairro: bairro,
                 categoria: parseInt(categoriaId),
-                prioridade: parseInt(prioridadeId),
-                usuario: {
-                    id: usuarioLogado.id
-                }
+                prioridade: parseInt(prioridadeId)
             };
 
             try {
-                const response = await api.post('/tickets', ticket);
+                const response = await api.post(`/tickets/usuario/${usuarioLogado.id}`, ticket);
 
                 if (response.ok) {
                     const ticketCriado = await response.json();

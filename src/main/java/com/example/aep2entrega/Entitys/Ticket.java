@@ -21,7 +21,8 @@ public class Ticket {
     private Categoria categoria;
 
     private String descricao;
-    private String localizacaoEndereco;
+    private String rua;
+    private String numero;
     private String bairro;
 
     @Enumerated(EnumType.STRING)
@@ -31,6 +32,22 @@ public class Ticket {
     private Prioridade prioridade;
 
     private LocalDateTime prazoSLA;
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
@@ -84,14 +101,6 @@ public class Ticket {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public String getLocalizacaoEndereco() {
-        return localizacaoEndereco;
-    }
-
-    public void setLocalizacaoEndereco(String localizacaoEndereco) {
-        this.localizacaoEndereco = localizacaoEndereco;
     }
 
     public String getBairro() {

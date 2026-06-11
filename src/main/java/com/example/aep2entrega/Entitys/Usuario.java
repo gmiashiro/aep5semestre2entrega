@@ -22,22 +22,14 @@ public abstract class Usuario {
     }
 
     public String getCpf() {
-        String cpfFormatado = "";  // 01234567890
+        if (cpf == null || cpf.length() != 11) {
+            return cpf;
+        }
 
-        int x = 0;
-        do {
-            if (cpfFormatado.length() == 3 || cpfFormatado.length() == 7) {
-                cpfFormatado += ".";
-            } else if (cpfFormatado.length() == 10) {
-                cpfFormatado += "-";
-            } else {
-                cpfFormatado += cpf.charAt(x);
-                x++;
-            }
-        } while (cpfFormatado.length() != 13);
-
-        // 0 1 2 . 3 4 5 . 6 7 8 - 9 0
-        return cpfFormatado;
+        return cpf.substring(0, 3) + "." +
+                cpf.substring(3, 6) + "." +
+                cpf.substring(6, 9) + "-" +
+                cpf.substring(9, 11);
     }
 
     public void setCpf(String cpf) {
