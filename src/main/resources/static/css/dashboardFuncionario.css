@@ -70,9 +70,10 @@ main {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 16px;
+    position: relative;
 }
 
-.main-area-title-container button {
+.filter-button {
     background-color: #0E506C;
     padding: 5px 9px;
     border-radius: 9px;
@@ -81,7 +82,7 @@ main {
     align-items: center;
 }
 
-.main-area-title-container button img {
+.filter-button img {
     width: 18px;
 }
 
@@ -155,4 +156,92 @@ ul {
 .disabled-button {
     background-color: #CFD9DE;
     cursor: default;
+}
+
+/*  */
+
+.window-top-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 26px;
+    margin-bottom: 10px;
+}
+
+.window-top-container span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #0E506C;
+}
+
+.close-window-button-container button img {
+    width: 20px;
+}
+
+.filter-window {
+    padding: 15px 0px;
+    position: absolute;
+    top: calc(100% + 16px);
+    right: 0;
+    z-index: 1000; 
+}
+
+.clean-button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.clean-button {
+    background-color: #DF1E1E;
+    color: #F6F8F9;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9px 27px;
+    border-radius: 9px;
+}
+
+.category-button {
+    background-color: #D6E5EB;
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    padding: 10px 43px; 
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0E506C;
+}
+
+.category-button img {
+    width: 20px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: flex-start;
+    margin: 11px 40px 35px 62px;
+}
+
+.option-button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    padding: 6px 20px;
+    border-radius: 100px;
+    border: solid 1px;
+}
+
+.unselected-filter-option {
+    font-weight: 500;
+    color: #0E506C;
+    background-color: transparent;
+}
+
+.hidden {
+    display: none;
 }
