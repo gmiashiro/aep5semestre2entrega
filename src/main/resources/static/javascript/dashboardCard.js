@@ -1,7 +1,8 @@
-const cards = document.querySelectorAll(".card");
 
-cards.forEach(card => {
-    card.addEventListener("click", () => {
-        card.classList.toggle("expanded");
-    });
+document.addEventListener('click', function(e) {
+    const cardClicado = e.target.closest('.card');
+
+    if (cardClicado) {
+        cardClicado.classList.toggle('expanded');
+    }
 });

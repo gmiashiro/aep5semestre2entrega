@@ -49,8 +49,12 @@ public class TicketController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Ticket>> listarTodosTickets() {
-        List<Ticket> tickets = ticketService.listarTodosTickets();
+    public ResponseEntity<List<Ticket>> listarTodosTickets(
+            @RequestParam(required = false) Integer categoria,
+            @RequestParam(required = false) Integer prioridade) {
+
+        List<Ticket> tickets = ticketService.listarComFiltros(categoria, prioridade);
+
         if (tickets.isEmpty()) {
             return ResponseEntity.noContent().build();
         }

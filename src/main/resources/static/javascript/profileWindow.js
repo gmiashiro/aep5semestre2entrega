@@ -1,18 +1,30 @@
-const profileButton = document.querySelector(".profile-button");
-const popupWindow = document.querySelector(".profile-window-container");
-const exitWindowButton = document.querySelector(".exit-button");
-const cpfUsuario = JSON.parse(localStorage.getItem('cpfUsuario'));
-var cpfElement = document.querySelector(".cpf");
-cpfElement.innerText = cpfElement.innerText + formatarCpf(cpfUsuario);
+document.addEventListener('DOMContentLoaded', () => {
+    const profileButton = document.querySelector(".profile-button");
+    const popupWindow = document.querySelector(".profile-window-container");
+    const exitWindowButton = document.querySelector(".exit-button");
+    const cpfElement = document.querySelector(".cpf");
 
+    const usuarioMorador = JSON.parse(localStorage.getItem('usuarioLogado'));
+    const usuarioGestor = JSON.parse(localStorage.getItem('gestorLogado'));
 
-profileButton.addEventListener("click", () => {
-    popupWindow.classList.toggle("window-hidden");
+    const usuarioAtivo = usuarioMorador || usuarioGestor;
+
+    if (usuarioAtivo && usuarioAtivo.cpf && cpfElement) {
+        cpfElement.innerText = cpfElement.innerText + " " + formatarCpf(usuarioAtivo.cpf);
+    }
+
+    if (profileButton && popupWindow) {
+        profileButton.addEventListener("click", () => {
+            popupWindow.classList.toggle("window-hidden");
+        });
+    }
+
+    if (exitWindowButton && popupWindow) {
+        exitWindowButton.addEventListener("click", () => {
+            popupWindow.classList.toggle("window-hidden");
+        });
+    }
 });
-
-exitWindowButton.addEventListener("click", () => {
-    popupWindow.classList.toggle("window-hidden");
-})
 
 function formatarCpf(cpf) {
     var cpfFormatado = "";  // 01234567890
@@ -29,6 +41,5 @@ function formatarCpf(cpf) {
         }
     } while (cpfFormatado.length != 13);
 
-    // 0 1 2 . 3 4 5 . 6 7 8 - 9 0
     return cpfFormatado;
 }

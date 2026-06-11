@@ -1,6 +1,7 @@
 package com.example.aep2entrega.Services;
 
 import com.example.aep2entrega.Entitys.Ticket;
+import com.example.aep2entrega.Enums.Categoria;
 import com.example.aep2entrega.Enums.Prioridade;
 import com.example.aep2entrega.Enums.StatusTicket;
 import com.example.aep2entrega.Repositories.TicketRepository;
@@ -61,5 +62,12 @@ public class TicketService {
 
     public List<Ticket> listarTicketsPorUsuario(Integer idUsuario) {
         return ticketRepository.findByUsuarioId(idUsuario);
+    }
+
+    public List<Ticket> listarComFiltros(Integer categoriaId, Integer prioridadeId) {
+        Categoria cat = (categoriaId != null) ? Categoria.fromId(categoriaId) : null;
+        Prioridade pri = (prioridadeId != null) ? Prioridade.fromId(prioridadeId) : null;
+
+        return ticketRepository.findByFiltros(cat, pri);
     }
 }
