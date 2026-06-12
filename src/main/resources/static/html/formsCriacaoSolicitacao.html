@@ -62,32 +62,37 @@
                         <div class="form-body-inputs">
                             <div class="input-container">
                                 <label for="titulo" class="input-label">Título:</label>
-                                <input id="titulo" name="titulo" placeholder="Ex: Poste com a lâmpada queimada" class="input-box">
+                                <input required id="titulo" name="titulo" placeholder="Ex: Poste com a lâmpada queimada" class="input-box">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="descricao" class="input-label">Descrição do problema:</label>
-                                <textarea id="descricao" name="descricao" placeholder="Escreva um breve relato sobre o problema" class="input-box" maxlength="500" wrap="soft"></textarea>
+                                <textarea required id="descricao" name="descricao" placeholder="Escreva um breve relato sobre o problema" class="input-box" maxlength="500" wrap="soft"></textarea>
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="address-input-container">
                                 <div class="address-input-first">
                                     <div class="input-container">
                                         <label for="rua" class="input-label">Rua:</label>
-                                        <input id="rua" name="rua" placeholder="Nome da rua" class="input-box medium-size">
+                                        <input required id="rua" name="rua" placeholder="Nome da rua" class="input-box medium-size">
+                                        <span class="feedback feedback-hidden"></span>
                                     </div>
                                     <div class="input-container">
                                         <label for="numero" class="input-label">Número:</label>
-                                        <input id="numero" name="numero" placeholder="N° 1234" class="input-box small-size" type="number">
+                                        <input required id="numero" name="numero" placeholder="N° 1234" class="input-box small-size" type="number">
+                                        <span class="feedback feedback-hidden"></span>
                                     </div>
                                 </div>
                                 <div class="input-container">
                                     <label for="bairro" class="input-label">Bairro:</label>
-                                    <input id="bairro" name="bairro" placeholder="Nome do bairro" class="input-box">
+                                    <input required id="bairro" name="bairro" placeholder="Nome do bairro" class="input-box">
+                                    <span class="feedback feedback-hidden"></span>
                                 </div>
                             </div>
                             <div class="input-container">
                                 <label for="categoria" class="input-label">Categoria da solicitação:</label>
                                 <div>
-                                    <select id="categoria" name="categoria" class="input-box select">
+                                    <select required id="categoria" name="categoria" class="input-box select">
                                         <option value="">Selecione a categoria</option>
                                         <option value="1">Iluminação</option>
                                         <option value="2">Asfalto</option>
@@ -95,19 +100,23 @@
                                         <option value="4">Ponto de ônibus</option>
                                         <option value="5">Outro</option>
                                     </select>
+                                    <span class="feedback feedback-hidden"></span>
                                 </div>
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="prioridade" class="input-label">Prioridade da solicitação:</label>
                                 <div>
-                                    <select id="prioridade" name="prioridade" class="input-box select">
+                                    <select required id="prioridade" name="prioridade" class="input-box select">
                                         <option value="">Selecione a prioridade</option>
                                         <option value="1">Baixa</option>
                                         <option value="2">Normal</option>
                                         <option value="3">Alta</option>
                                         <option value="4">Urgente</option>
                                     </select>
+                                    <span class="feedback feedback-hidden"></span>
                                 </div>
+                                
                             </div>
                         </div>
                         <div>
@@ -120,5 +129,6 @@
     </main>
     <script type="module" src="../javascript/criacaoSolicitacao.js"></script>
     <script type="module" src="../javascript/profileWindow.js"></script>
+    <script src="../javascript//formularios.js"></script>
 </body>
 </html>

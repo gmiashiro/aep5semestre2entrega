@@ -66,18 +66,20 @@
                             <div class="input-container">
                                 <label for="novo-status" class="input-label">Novo status:</label>
                                 <div>
-                                    <select name="novo-status" id="novo-status" class="input-box select">
+                                    <select required ="novo-status" id="novo-status" class="input-box select">
                                         <option value="">Selecione o status</option>
                                         <option value="2">Triagem</option>
                                         <option value="3">Em andamento</option>
                                         <option value="4">Resolvido</option>
                                         <option value="5">Fechado</option>
                                     </select>
+                                    <span class="feedback feedback-hidden"></span>
                                 </div>
                             </div>
                             <div class="input-container">
                                 <label for="justificativa" class="input-label">Justificativa:</label>
-                                <textarea name="justificativa" id="justificativa" placeholder="Escreva uma justificativa referente ao novo status" class="input-box" maxlength="500" wrap="soft"></textarea>
+                                <textarea required name="justificativa" id="justificativa" placeholder="Escreva uma justificativa referente ao novo status" class="input-box" maxlength="500" wrap="soft"></textarea>
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                         </div>
                         <div class="button-container">
@@ -97,5 +99,6 @@
 
     <script type="module" src="../javascript/atualizacaoSolicitacao.js"></script>
     <script type="module" src="../javascript/profileWindow.js"></script>
+    <script src="../javascript//formularios.js"></script>
 </body>
 </html>

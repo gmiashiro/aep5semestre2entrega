@@ -8,6 +8,10 @@ h2 {
     font-weight: 400;
 }
 
+.feedback-hidden {
+    display: none;
+}
+
 .box-main-img img {
     width: 358px;
     height: 448px;
@@ -31,14 +35,27 @@ h2 {
 
 .input-box {
     background-color: #EDF3F6;
-    border: solid 2px #1578A2;
+    border: solid 2px #566e78;
     border-radius: 9px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: italic;
     padding-left: 18px;
+    outline: none;
 }
+
+.input-box:focus {
+    border: solid 3px #1578A2;
+}
+
+.input-box:valid {
+    background-color: #EDFCEF;
+    border-color: #21D333;
+}
+
+
+
 
 .input-sucess {
     background-color: #EDFCEF;

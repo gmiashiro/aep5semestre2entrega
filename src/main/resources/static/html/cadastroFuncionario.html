@@ -32,27 +32,33 @@
                         <div class="form-body-inputs">
                             <div class="input-container">
                                 <label for="nome" class="input-label">Nome completo:</label>
-                                <input id="nome" name="nome" placeholder="Digite seu nome completo aqui" class="input-box">
+                                <input required id="nome" name="nome" placeholder="Digite seu nome completo aqui" class="input-box">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="cpf" class="input-label">CPF:</label>
-                                <input id="cpf" name="cpf" placeholder="Digite seu CPF aqui" class="input-box">
+                                <input required id="cpf" name="cpf" placeholder="Digite seu CPF aqui" class="input-box">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="cargo" class="input-label">Cargo:</label>
-                                <input id="cargo" name="cargo" placeholder="Digite seu cargo aqui" class="input-box">
+                                <input required id="cargo" name="cargo" placeholder="Digite seu cargo aqui" class="input-box">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="email" class="input-label">E-mail para login:</label>
-                                <input id="email" name="email" placeholder="Digite seu e-mail aqui" class="input-box">
+                                <input required id="email" name="email" placeholder="Digite seu e-mail aqui" class="input-box">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="senha" class="input-label">Senha:</label>
-                                <input id="senha" name="senha" placeholder="Digite sua senha aqui" class="input-box" type="password">
+                                <input required id="senha" name="senha" placeholder="Digite sua senha aqui" class="input-box" type="password">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="confirmacaoSenha" class="input-label">Digite sua senha novamente:</label>
-                                <input id="confirmacaoSenha" name="confirmacaoSenha" placeholder="Digite sua senha novamente aqui" class="input-box" type="password">
+                                <input required id="confirmacaoSenha" name="confirmacaoSenha" placeholder="Digite sua senha novamente aqui" class="input-box" type="password">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                         </div>
                         <div>
@@ -70,5 +76,6 @@
         </div>
     </main>
     <script type="module" src="../javascript/cadastroFuncionario.js"></script>
+    <script src="../javascript//formularios.js"></script>
 </body>
 </html>
