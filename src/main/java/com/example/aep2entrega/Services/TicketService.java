@@ -20,6 +20,7 @@ public class TicketService {
     }
 
     public Ticket criarTicket(Ticket novoTicket) {
+        System.out.println("veio aqui service");
         novoTicket.setDataCriacao(LocalDateTime.now());
         novoTicket.setStatus(StatusTicket.ABERTO);
 

@@ -60,7 +60,7 @@ async function carregarTickets() {
         const response = await api.get(url);
 
         if (response.status === 204 || !response.ok) {
-            chamarRenderizacaoExterna([], [], []);
+            renderizarCards([], [], []);
             return;
         }
 
@@ -70,14 +70,14 @@ async function carregarTickets() {
         const concluidas = todosTickets.filter(t => t.status === 4);
         const canceladas = todosTickets.filter(t => t.status === 5);
 
-        chamarRenderizacaoExterna(pendentes, concluidas, canceladas);
+        renderizarCards(pendentes, concluidas, canceladas);
 
     } catch (error) {
         console.error("Erro ao carregar solicitações:", error);
     }
 }
 
-function RenderizarCards(pendentes, concluidas, canceladas) {
+function renderizarCards(pendentes, concluidas, canceladas) {
     console.log("Tickets Pendentes recebidos:", pendentes);
     console.log("Tickets Concluídas recebidos:", concluidas);
     console.log("Tickets Canceladas recebidos:", canceladas);

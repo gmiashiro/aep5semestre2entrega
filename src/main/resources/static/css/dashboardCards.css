@@ -302,7 +302,7 @@ hr {
 }
 
 .red-card-background:hover {
-    box-shadow: 0px 7px 11px 3px rgba(228, 221, 27, 0.52);
+    box-shadow: 0px 7px 11px 3px rgba(223, 30, 30, 0.52);
     transition: .2s ease;
 }
 
@@ -313,7 +313,7 @@ hr {
 }
 
 .green-card-background:hover {
-    box-shadow: 0px 7px 11px 3px rgba(228, 221, 27, 0.67);
+    box-shadow: 0px 7px 11px 3px rgba(33, 211, 21, 0.67);
     transition: .2s ease;
 }
 
@@ -324,7 +324,7 @@ hr {
 }
 
 .blue-card-background:hover {
-    box-shadow: 0px 7px 12px 3px rgba(228, 221, 27, 0.79);
+    box-shadow: 0px 7px 12px 3px rgba(28, 163, 219, 0.79);
     transition: .2s ease;
 }
 
@@ -413,3 +413,4 @@ hr {
 .blue-progress-bar {
     background-color: #1CA3DB;
 }
+
