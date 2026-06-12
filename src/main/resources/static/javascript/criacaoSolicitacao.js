@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const prioridadeId = document.getElementById('prioridade').value;
 
             if (!titulo || !descricao || !rua || !numero || !bairro || !categoriaId || !prioridadeId) {
-                alert("Por favor, preencha todos os campos.");
+                mostrarNotificacao("Por favor, preencha todos os campos.", "aviso");
                 return;
             }
 

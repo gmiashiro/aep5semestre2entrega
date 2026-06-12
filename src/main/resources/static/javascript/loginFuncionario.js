@@ -1,5 +1,5 @@
 import { api } from './api.js';
-import {mostrarNotificacao} from "./notificacao";
+import {mostrarNotificacao} from "./notificacao.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const formLogin = document.querySelector('.form-body');
@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = 'dashboardFuncionario.html';
                 } else {
                     const errorMsg = await response.text();
-                    alert(`Erro ao acessar: ${errorMsg}`);
                     mostrarNotificacao(`Erro ao acessar: ${errorMsg}`, "erro");
                 }
             } catch (error) {

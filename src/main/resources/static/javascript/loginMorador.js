@@ -1,4 +1,5 @@
 import { api } from './api.js';
+import {mostrarNotificacao} from "./notificacao.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const formLogin = document.getElementById('form-login-cidadao');
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inputElement.classList.remove('input-error');
 
             if (!cpfBruto) {
-                mostrarErro("Por favor, digite seu CPF.");
+                mostrarNotificacao("Por favor, digite seu CPF.", "aviso");
                 return;
             }
 
@@ -37,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = 'landingPage.html';
                 } else {
                     const errorMsg = await response.text();
-                    mostrarErro(`Erro ao acessar: ${errorMsg}`);
+                    mostrarNotificacao(`Erro ao acessar: ${errorMsg}`, "erro");
                 }
             } catch (error) {
                 console.error("Erro na comunicação:", error);
-                mostrarErro("Falha de conexão com o servidor. O backend está rodando?");
+                mostrarNotificacao("Falha de conexão com o servidor. O backend está rodando?", "erro");
             }
         });
     }

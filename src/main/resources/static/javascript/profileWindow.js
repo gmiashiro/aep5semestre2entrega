@@ -1,4 +1,4 @@
-import {mostrarNotificacao} from "./notificacao";
+import {mostrarNotificacao} from "./notificacao.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const profileButton = document.querySelector(".profile-button");
