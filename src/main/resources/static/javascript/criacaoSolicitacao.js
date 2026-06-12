@@ -1,10 +1,12 @@
 import { api } from './api.js';
+import { mostrarNotificacao } from './notificacao.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const usuarioLogadoStr = localStorage.getItem('usuarioLogado');
     if (!usuarioLogadoStr) {
-        alert("Você precisa estar logado para criar uma solicitação.");
-        window.location.href = 'loginMorador.html';
+        mostrarNotificacao("Você precisa estar logado para criar uma solicitação.", "aviso", 2000, () => {
+            window.location.href = 'loginMorador.html';
+        });
         return;
     }
 
@@ -43,15 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const ticketCriado = await response.json();
-                    alert(`Solicitação criada com sucesso! Protocolo: ${ticketCriado.protocolo}`);
+                    mostrarNotificacao(`Solicitação criada com sucesso! Protocolo: ${ticketCriado.protocolo}`, "sucesso", 2500, () => {
+                        window.location.href = 'landingPage.html';
+                    });
 
                     window.location.href = 'landingPage.html';
                 } else {
-                    alert("Erro ao criar a solicitação. Verifique os dados.");
+                    mostrarNotificacao("Erro ao criar a solicitação. Verifique os dados.", "erro");
                 }
             } catch (error) {
                 console.error("Erro:", error);
-                alert("Falha de conexão com o servidor.");
+                mostrarNotificacao("Falha de conexão com o servidor.", "erro");
             }
         });
     }

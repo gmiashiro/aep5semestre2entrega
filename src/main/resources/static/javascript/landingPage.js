@@ -35,11 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btnPerfil.addEventListener('click', () => {
             if (usuarioLogado) {
                 toggleProfileWindowLanding();
-                const desejaSair = confirm("Deseja sair da sua conta ObservaAção?");
-                if (desejaSair) {
-                    localStorage.removeItem('usuarioLogado');
-                    window.location.reload();
-                }
             } else {
                 window.location.href = 'loginMorador.html';
             }

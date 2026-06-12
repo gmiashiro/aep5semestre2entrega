@@ -24,22 +24,33 @@ document.addEventListener('DOMContentLoaded', () => {
             popupWindow.classList.toggle("window-hidden");
         });
     }
+
+    const exitAllButton = document.querySelector(".exit-all-button");
+
+    if (exitAllButton) {
+        exitAllButton.addEventListener("click", () => {
+            // Remove as chaves específicas do localStorage
+            localStorage.removeItem('usuarioLogado');
+            localStorage.removeItem('cpfUsuario');
+            localStorage.removeItem('gestorLogado');
+
+            // Alternativamente, você pode usar localStorage.clear(); para apagar tudo de uma vez
+
+            alert("Você saiu do sistema com sucesso.");
+            // Redireciona para a página inicial ou de login
+            window.location.href = 'landingPage.html';
+        });
+    }
 });
 
 function formatarCpf(cpf) {
-    var cpfFormatado = "";  // 01234567890
+    if (!cpf) return "";
 
-    var x = 0;
-    do {
-        if (cpfFormatado.length == 3 || cpfFormatado.length == 7) {
-            cpfFormatado += ".";
-        } else if (cpfFormatado.length == 10) {
-            cpfFormatado += "-";
-        } else {
-            cpfFormatado += cpf.charAt(x);
-            x++;
-        }
-    } while (cpfFormatado.length != 13);
+    const cpfLimpo = String(cpf).replace(/\D/g, '');
 
-    return cpfFormatado;
+    if (cpfLimpo.length !== 11) {
+        return cpf;
+    }
+
+    return cpfLimpo.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
 }

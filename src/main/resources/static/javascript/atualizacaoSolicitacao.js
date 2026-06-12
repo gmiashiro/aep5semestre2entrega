@@ -1,11 +1,13 @@
 import { api } from './api.js';
+import { mostrarNotificacao } from './notificacao.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
     const gestorLogado = localStorage.getItem('gestorLogado');
     if (!gestorLogado) {
-        alert("Acesso negado. Apenas funcionários podem atualizar solicitações.");
-        window.location.href = 'loginFuncionario.html';
+        mostrarNotificacao("Acesso negado. Apenas funcionários podem atualizar.", "erro", 2000, () => {
+            window.location.href = 'loginFuncionario.html';
+        });
         return;
     }
 
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const justificativaTexto = document.getElementById('justificativa').value.trim();
 
             if (!statusValor || !justificativaTexto) {
-                alert("Por favor, selecione um status e escreva uma justificativa.");
+                mostrarNotificacao("Por favor, selecione um status e escreva uma justificativa.", "aviso");
                 return;
             }
 
@@ -41,15 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await api.put(`/tickets/${protocolo}/status`, atualizacaoDados);
 
                 if (response.ok) {
-                    alert(`Solicitação Nº ${protocolo} atualizada com sucesso!`);
-                    window.location.href = 'dashboardFuncionario.html';
+                    mostrarNotificacao(`Solicitação Nº ${protocolo} atualizada com sucesso!`, "sucesso", 2000, () => {
+                        window.location.href = 'dashboardFuncionario.html';
+                    });
                 } else {
                     const errorMsg = await response.text();
-                    alert(`Erro ao atualizar: ${errorMsg}`);
+                    mostrarNotificacao(`Erro ao atualizar: ${errorMsg}`, "erro");
                 }
             } catch (error) {
                 console.error("Erro na atualização:", error);
-                alert("Falha de conexão com o servidor.");
+                mostrarNotificacao("Falha de conexão com o servidor.", "erro");
             }
         });
     }

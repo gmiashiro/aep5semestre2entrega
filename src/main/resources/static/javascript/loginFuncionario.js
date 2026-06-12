@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const gestor = await response.json();
-
+                    localStorage.removeItem('usuarioLogado');
+                    localStorage.removeItem('cpfUsuario');
                     localStorage.setItem('gestorLogado', JSON.stringify(gestor));
 
                     window.location.href = 'dashboardFuncionario.html';

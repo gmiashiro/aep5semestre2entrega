@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const cidadao = await response.json();
-
+                    localStorage.removeItem('gestorLogado');
                     localStorage.setItem('usuarioLogado', JSON.stringify(cidadao));
                     localStorage.setItem('cpfUsuario', JSON.stringify(cpfLimpo));
 
