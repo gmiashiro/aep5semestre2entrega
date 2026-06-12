@@ -32,6 +32,7 @@ public class Ticket {
     private Prioridade prioridade;
 
     private LocalDateTime prazoSLA;
+    //private LocalDateTime dataAtualizacao = null;
 
     public String getRua() {
         return rua;

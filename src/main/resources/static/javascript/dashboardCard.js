@@ -367,13 +367,6 @@ function createCard(cardData, isGestorDashboard, isDefaultExpanded) {
 
     const justificationEmployeeContainer = document.createElement("div");
     justificationEmployeeContainer.classList.add("employee-info-container");
-    // const employeeIcon = document.createElement("img");
-    // employeeIcon.classList.add("icon");
-    // employeeIcon.src = "../assets/icons/employee.svg";
-    // const employeeLabel = document.createElement("span");
-    // employeeLabel.innerText = "Responsavel:";
-    //justificationEmployeeContainer.appendChild(employeeIcon);
-    // justificationEmployeeContainer.appendChild(employeeLabel);
     justificationAreaContainer.appendChild(justificationEmployeeContainer);
     sixthLineContainer.appendChild(justificationAreaContainer);
     expandedPartWrapper.appendChild(sixthLineContainer);
@@ -414,21 +407,6 @@ function createCard(cardData, isGestorDashboard, isDefaultExpanded) {
     createdDateContainer.appendChild(createdDateLabel);
 
     seventhLineContainer.appendChild(createdDateContainer);
-
-    const updatedDateContainer = document.createElement("div");
-    updatedDateContainer.classList.add("date-container");
-
-    const updatedDateIcon = document.createElement("img");
-    updatedDateIcon.src = "../assets/icons/timeUpdated.svg";
-    updatedDateIcon.alt = "Ícone para a data de atualização";
-    updatedDateIcon.classList.add("iconDate");
-    updatedDateContainer.appendChild(updatedDateIcon);
-
-    const updatedDateLabel = document.createElement("span");
-    updatedDateLabel.innerText = "Atualizado em: " + cardData.dateUpdated;
-    updatedDateContainer.appendChild(updatedDateLabel);
-
-    seventhLineContainer.appendChild(updatedDateContainer);
 
     const deadlineContainer = document.createElement("div");
     deadlineContainer.classList.add("date-container");
@@ -498,9 +476,8 @@ export function formatAndRenderSingleCard(cardOriginal, container, isGestorDashb
                 category: cardOriginal.categoria,
                 phase: cardOriginal.status, 
                 description: cardOriginal.descricao,
-                justification: cardOriginal.justificativa || "Sem justificativa", 
+                justification: cardOriginal.justificativa || "Essa solicitação ainda não recebeu nenhuma atualização", 
                 dateCreated: new Date(cardOriginal.dataCriacao).toLocaleDateString("pt-BR"), 
-                dateUpdated: new Date(cardOriginal.dataCriacao).toLocaleDateString("pt-BR") || "Sem justificativa",
                 dateDeadline: new Date(cardOriginal.prazoSLA).toLocaleDateString("pt-BR"), 
                 addDeadlineAlert: false
             }
@@ -525,9 +502,8 @@ export function formatAndRenderCards(cardsOriginal, container, isGestorDashboard
                 category: card.categoria,
                 phase: card.status, 
                 description: card.descricao,
-                justification: card.justificativa || "Sem justificativa", 
+                justification: card.justificativa || "Essa solicitação ainda não recebeu nenhuma atualização", 
                 dateCreated: new Date(card.dataCriacao).toLocaleDateString("pt-BR"), 
-                dateUpdated: new Date(card.dataCriacao).toLocaleDateString("pt-BR") || "Sem justificativa",
                 dateDeadline: new Date(card.prazoSLA).toLocaleDateString("pt-BR"), 
                 addDeadlineAlert: false
             }
