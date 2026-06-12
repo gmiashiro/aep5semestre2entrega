@@ -32,11 +32,13 @@
                         <div class="form-body-inputs">
                             <div class="input-container">
                                 <label for="email" class="input-label">E-mail:</label>
-                                <input id="email" name="email" placeholder="Digite seu e-mail cadastrado aqui" class="input-box">
+                                <input required id="email" name="email" placeholder="Digite seu e-mail cadastrado aqui" class="input-box">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                             <div class="input-container">
                                 <label for="senha" class="input-label">Senha:</label>
-                                <input id="senha" name="senha" placeholder="Digite sua senha aqui" class="input-box" type="password">
+                                <input required id="senha" name="senha" placeholder="Digite sua senha aqui" class="input-box" type="password">
+                                <span class="feedback feedback-hidden"></span>
                             </div>
                         </div>
                         <div>
@@ -55,5 +57,6 @@
     </main>
 
     <script type="module" src="../javascript/loginFuncionario.js"></script>
+    <script src="../javascript//formularios.js"></script>
 </body>
 </html>

@@ -44,7 +44,19 @@ button {
     margin: 0;
     font: inherit;
     color: inherit;
+}
+
+button, .act-as-button {
+    transition: 0.1s;
+}
+
+button:hover, .act-as-button:hover{
+    scale: 1.1;
     cursor: pointer;
+}
+
+button:active, .act-as-button:active {
+    scale: 0.90;
 }
 
 a {

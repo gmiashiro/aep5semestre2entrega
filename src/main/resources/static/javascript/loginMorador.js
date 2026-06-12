@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const inputElement = document.getElementById('inputCpf');
             const cpfBruto = inputElement.value.trim();
-            const mensagemErro = document.getElementById('mensagem-erro');
+            const mensagemErro = document.querySelector('.feedback');
 
-            mensagemErro.style.display = 'none';
+            //mensagemErro.style.display = 'none';
+            mensagemErro.classList.add("feedback-hidden")
             inputElement.classList.remove('input-error');
 
             if (!cpfBruto) {
