@@ -1,3 +1,50 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.noCard-container {
+    background-color: #D6E5EB;
+    border: solid 1px #81CEEF;
+    border-radius: 9px;
+    padding: 50px 140px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0E506C;
+    display: flex;
+    align-items: center;
+    gap: 140px;
+}
+
+.noCard-container img {
+    width: 178px;
+}
+
+.finalLineContainer {
+    justify-self: center;
+    margin-top: 23px;
+}
+
+.finalLineContainer button {
+    font-family: "Google Sans Flex", sans-serif;
+    color: #F6F8F9;
+    background-color: #0E506C;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 40px;
+    border-radius: 9px;
+}
+
+.hidden {
+    display: none;
+}
+
 .card {
     font-family: "Google Sans Flex", sans-serif;
     color: #020D12;

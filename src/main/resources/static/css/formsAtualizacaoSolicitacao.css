@@ -4,9 +4,16 @@ h1 {
     font-weight: 400;
 }
 
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 84px;
+}
+
 .boxes-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 25px;
     margin-top: 20px;
 }

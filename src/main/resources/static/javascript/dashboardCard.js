@@ -70,38 +70,25 @@ const progressTagMap = {
 
 
 
-function formatCardData() {
-
-}
-
-function getCategoryStyle(category) {
-    
-}
-
-
-const cardData = {
-    id: 1, 
-    status: 1,
-    priority: 1, 
-    title: "Apenas testando",
-    address: "Rua teste, 123", 
-    category: 1,
-    phase: 1, 
-    description: "Isso é uma descrição",
-    justification: "Está em teste ainda", 
-    employee: "Tester",
-    dateCreated: 1, 
-    dateUpdated: 1,
-    dateDeadline: 1, 
-    addDeadlineAlert: true,
-}
+// const cardData = {
+//     id: 1, 
+//     status: 1,
+//     priority: 1, 
+//     title: "Apenas testando",
+//     address: "Rua teste, 123", 
+//     category: 1,
+//     phase: 1, 
+//     description: "Isso é uma descrição",
+//     justification: "Está em teste ainda", 
+//     employee: "Tester",
+//     dateCreated: 1, 
+//     dateUpdated: 1,
+//     dateDeadline: 1, 
+//     addDeadlineAlert: true,
+// }
 
 
-
-createCard(cardData);
-
-
-function createCard(cardData) {
+function createCard(cardData, isGestorDashboard, isDefaultExpanded) {
 
     // Cria o card
     const card = document.createElement("div");
@@ -109,7 +96,7 @@ function createCard(cardData) {
         "shadow-box", 
         "reduced-card",
         "card",
-        cardBackgroundStyleMap[cardData.category]
+        cardBackgroundStyleMap[cardData.status]
     );
 
     // Cria a primeira linha
@@ -282,8 +269,8 @@ function createCard(cardData) {
     const progressBarFill = document.createElement("div");
     progressBarFill.classList.add(
         "progress-fill",
-        statusStyleMap[cardData.category],
-        progressBarStyleMap[cardData.category]
+        statusStyleMap[cardData.status],
+        progressBarStyleMap[cardData.status]
     );
     progressBarBackground.appendChild(progressBarFill);
     progressContainer.appendChild(progressBarBackground);
@@ -313,7 +300,13 @@ function createCard(cardData) {
 
     // Cria um wrapper para a parte escondida
     const expandedPartWrapper = document.createElement("div");
-    expandedPartWrapper.classList.add("extra-content-wrapper");
+
+    if(!isDefaultExpanded) {
+        expandedPartWrapper.classList.add("extra-content-wrapper");
+    } else {
+        card.classList.add("expanded");
+    }
+
     expandedPartContainer.appendChild(expandedPartWrapper);
 
     // Quinta linha nova
@@ -374,13 +367,13 @@ function createCard(cardData) {
 
     const justificationEmployeeContainer = document.createElement("div");
     justificationEmployeeContainer.classList.add("employee-info-container");
-    const employeeIcon = document.createElement("img");
-    employeeIcon.classList.add("icon");
-    employeeIcon.src = "../assets/icons/employee.svg";
-    const employeeLabel = document.createElement("span");
-    employeeLabel.innerText = "Responsavel:";
-    justificationEmployeeContainer.appendChild(employeeIcon);
-    justificationEmployeeContainer.appendChild(employeeLabel);
+    // const employeeIcon = document.createElement("img");
+    // employeeIcon.classList.add("icon");
+    // employeeIcon.src = "../assets/icons/employee.svg";
+    // const employeeLabel = document.createElement("span");
+    // employeeLabel.innerText = "Responsavel:";
+    //justificationEmployeeContainer.appendChild(employeeIcon);
+    // justificationEmployeeContainer.appendChild(employeeLabel);
     justificationAreaContainer.appendChild(justificationEmployeeContainer);
     sixthLineContainer.appendChild(justificationAreaContainer);
     expandedPartWrapper.appendChild(sixthLineContainer);
@@ -454,11 +447,111 @@ function createCard(cardData) {
     seventhLineContainer.appendChild(deadlineContainer);
 
     expandedPartWrapper.appendChild(seventhLineContainer);
+
+    // Cria a última linha
+    /*
+    ESTRUTURA:
+    <div class="finalLineContainer">
+        <button onclick="atualizarCard()">Atualizar</button>
+    </div>
+    */
+
+    if (isGestorDashboard) {
+        const finalLineContainer = document.createElement("div");
+        finalLineContainer.classList.add("finalLineContainer");
+
+        const updateButton = document.createElement("button");
+        updateButton.classList.add("update-button");
+        updateButton.id = cardData.id;
+        updateButton.innerText = "Atualizar";
+
+        updateButton.addEventListener("click", () => {
+            window.location.href = "formsAtualizacaoSolicitacao.html?protocolo=" + cardData.id;
+        });
+
+        finalLineContainer.appendChild(updateButton);
+
+        // sempre adicionar
+        expandedPartWrapper.appendChild(finalLineContainer);
+    }
     
 
-
-
-    const main = document.querySelector("main");
-    main.appendChild(card);
-
+    return card;
 }
+
+var cards = [];
+
+export function formatAndRenderSingleCard(cardOriginal, container, isGestorDashboard, isDefaultExpanded) {
+
+    console.log(cardOriginal);
+
+    if (typeof cardOriginal === "object") {
+        console.log("É um objeto");
+    } else{
+
+    }
+
+    const card = {
+                id: cardOriginal.protocolo, 
+                status: cardOriginal.status,
+                priority: cardOriginal.prioridade, 
+                title: cardOriginal.titulo,
+                address: cardOriginal.rua + ", " + cardOriginal.numero + ", " + cardOriginal.bairro, 
+                category: cardOriginal.categoria,
+                phase: cardOriginal.status, 
+                description: cardOriginal.descricao,
+                justification: cardOriginal.justificativa || "Sem justificativa", 
+                dateCreated: new Date(cardOriginal.dataCriacao).toLocaleDateString("pt-BR"), 
+                dateUpdated: new Date(cardOriginal.dataCriacao).toLocaleDateString("pt-BR") || "Sem justificativa",
+                dateDeadline: new Date(cardOriginal.prazoSLA).toLocaleDateString("pt-BR"), 
+                addDeadlineAlert: false
+            }
+
+    container.appendChild(createCard(card, isGestorDashboard, isDefaultExpanded));
+}
+
+
+export function formatAndRenderCards(cardsOriginal, container, isGestorDashboard, isDefaultExpanded) {
+
+    console.log(cardsOriginal);
+
+    
+    cardsOriginal.forEach(card => {
+        cards.push(
+            {
+                id: card.protocolo, 
+                status: card.status,
+                priority: card.prioridade, 
+                title: card.titulo,
+                address: card.rua + ", " + card.numero + ", " + card.bairro, 
+                category: card.categoria,
+                phase: card.status, 
+                description: card.descricao,
+                justification: card.justificativa || "Sem justificativa", 
+                dateCreated: new Date(card.dataCriacao).toLocaleDateString("pt-BR"), 
+                dateUpdated: new Date(card.dataCriacao).toLocaleDateString("pt-BR") || "Sem justificativa",
+                dateDeadline: new Date(card.prazoSLA).toLocaleDateString("pt-BR"), 
+                addDeadlineAlert: false
+            }
+        )
+    });
+
+    cards.forEach(card => {
+        container.appendChild(createCard(card, isGestorDashboard, isDefaultExpanded));
+    });
+}
+
+// 0: 
+// bairro: "Bairro dos testes"
+// categoria: 3
+// dataCriacao: "2026-06-12T01:11:19.242745"
+// descricao: "Descricao bem descritiva"
+// justificativa: null
+// numero: "123"
+// prazoSLA: "2026-07-12T01:11:19.242745"
+// prioridade: 1
+// protocolo: 1
+// rua: "rua teste"
+// status: 1
+// titulo: "Titulo 1"
+// usuario: {cpf: '012.345.678-90', id: 2}

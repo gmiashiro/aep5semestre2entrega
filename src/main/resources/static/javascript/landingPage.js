@@ -32,9 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const botoaoAcessarPainel = document.querySelector('.acess-dashboard');
 
     botoaoAcessarPainel.addEventListener("click", () => {
-        if (usuarioLogado) {
-            // LINK PROVISÓRIO
-            window.location.href = 'dashboardFuncionario.html';
+
+        if (usuarioAtivo) {
+            console.log(usuarioAtivo)
+            console.log(usuarioMorador)
+            console.log(usuarioGestor)
+            if (usuarioGestor == null) {
+                console.log("era para ter dado certo")
+                window.location.href = 'dashboardMorador.html';
+            } else {
+                window.location.href = 'dashboardFuncionario.html';
+            }
         } else {
             window.location.href = 'loginMorador.html';
         }
@@ -45,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnPerfil) {
         btnPerfil.addEventListener('click', () => {
             if (usuarioAtivo) {
+                console.log(usuarioAtivo)
                 toggleProfileWindowLanding();
             } else {
                 window.location.href = 'loginMorador.html';

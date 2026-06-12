@@ -35,6 +35,11 @@ public class TicketService {
                 .orElse(null);
     }
 
+    public Ticket buscarTicketGestor(Long protocolo) {
+        return ticketRepository.findById(protocolo)
+                .orElse(null);
+    }
+
     private LocalDateTime calcularPrazoSlA(Prioridade prioridade, LocalDateTime prazo) {
         if (prioridade == null) {
             return prazo.plusDays(30);

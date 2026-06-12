@@ -52,6 +52,19 @@ public class TicketController {
         return ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/{protocolo}")
+    public ResponseEntity<Ticket> buscarTicketGestor(
+            @PathVariable Long protocolo) {
+
+        System.out.println("Protocolo recebido: " + protocolo);
+
+        Ticket ticket = ticketService.buscarTicketGestor(protocolo);
+        if (ticket != null) {
+            return ResponseEntity.ok(ticket);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     @PutMapping("/{protocolo}/status")
     public ResponseEntity<?> atualizarStatus(
             @PathVariable Long protocolo,
@@ -68,6 +81,8 @@ public class TicketController {
     public ResponseEntity<List<Ticket>> listarTodosTickets(
             @RequestParam(required = false) Integer categoria,
             @RequestParam(required = false) Integer prioridade) {
+
+        System.out.println("teste");
 
         List<Ticket> tickets = ticketService.listarComFiltros(categoria, prioridade);
 
