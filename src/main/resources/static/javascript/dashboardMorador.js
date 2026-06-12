@@ -1,6 +1,8 @@
 import { api } from './api.js';
 import { formatAndRenderCards } from "./dashboardCard.js";
 
+let filtroPesquisaProtocolo = "";
+
 document.addEventListener('DOMContentLoaded', () => {
     const usuarioLogadoStr = localStorage.getItem('usuarioLogado');
     if (!usuarioLogadoStr) {
@@ -15,17 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsContainer = document.querySelector(".cards-container");
     const noCardContainer = document.querySelector(".noCard-container");
 
-    let todosTickets = [];
-
     if (searchInput && searchButton) {
-        searchButton.addEventListener("click", () => aplicarFiltro(searchInput.value));
+        searchButton.addEventListener("click", () => {
+            filtroPesquisaProtocolo = searchInput.value.trim();
+            carregarTickets();
+        });
 
         searchInput.addEventListener("keypress", (e) => {
-            if (e.key === 'Enter') aplicarFiltro(searchInput.value);
+            if (e.key === 'Enter') {
+                filtroPesquisaProtocolo = searchInput.value.trim();
+                carregarTickets();
+            }
         });
 
         searchInput.addEventListener("input", () => {
-            if (searchInput.value.trim() === "") aplicarFiltro("");
+            if (searchInput.value.trim() === "") {
+                filtroPesquisaProtocolo = "";
+                carregarTickets();
+            }
         });
     }
 
@@ -38,24 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            todosTickets = await response.json();
+            let ticketsFiltrados = await response.json();
 
-            todosTickets.sort((a, b) => b.protocolo - a.protocolo);
+            if (filtroPesquisaProtocolo !== "") {
+                ticketsFiltrados = ticketsFiltrados.filter(t => String(t.protocolo) === filtroPesquisaProtocolo);
+            }
 
-            renderizarCards(todosTickets);
+            ticketsFiltrados.sort((a, b) => b.protocolo - a.protocolo);
+
+            renderizarCards(ticketsFiltrados);
+
         } catch (error) {
             console.error("Erro ao carregar solicitações:", error);
             renderizarCards([]);
-        }
-    }
-
-    function aplicarFiltro(texto) {
-        const textoLimpo = texto.trim();
-        if (textoLimpo === "") {
-            renderizarCards(todosTickets);
-        } else {
-            const filtrados = todosTickets.filter(t => String(t.protocolo) === textoLimpo);
-            renderizarCards(filtrados);
         }
     }
 
@@ -67,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             noCardContainer.classList.remove("hidden");
         } else {
             noCardContainer.classList.add("hidden");
-
             formatAndRenderCards(tickets, cardsContainer, false, false);
         }
     }
