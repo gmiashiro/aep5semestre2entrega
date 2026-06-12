@@ -3,6 +3,7 @@ import {formatAndRenderCards} from "./dashboardCard.js";
 
 let filtroCategoriaAtual = null;
 let filtroPrioridadeAtual = null;
+let filtroPesquisaProtocolo = "";
 
 const mapaCategorias = {
     "Iluminação": 1,
@@ -32,7 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    carregarTickets();
+    const filterContainers = document.querySelectorAll(".filter-container");
+    filterContainers.forEach(filterContainer => {
+        initializeFilterContainer(filterContainer);
+    });
+
+    const searchInput = document.querySelector(".search-container input");
+    const searchButton = document.querySelector(".search-container button");
+
+    if (searchInput && searchButton) {
+        searchButton.addEventListener("click", () => {
+            filtroPesquisaProtocolo = searchInput.value.trim();
+            carregarTickets();
+        });
+
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === 'Enter') {
+                filtroPesquisaProtocolo = searchInput.value.trim();
+                carregarTickets();
+            }
+        });
+
+        searchInput.addEventListener("input", () => {
+            if (searchInput.value.trim() === "") {
+                filtroPesquisaProtocolo = "";
+                carregarTickets();
+            }
+        });
+    }
 
     const buttons = document.querySelectorAll(".boxed-button");
     buttons.forEach(button => {
@@ -45,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add("selected-button");
         });
     });
-    
+
+    carregarTickets();
 });
 
 async function carregarTickets() {
@@ -67,11 +96,15 @@ async function carregarTickets() {
             return;
         }
 
-        const todosTickets = await response.json();
+        let ticketsFiltrados = await response.json();
 
-        const pendentes = todosTickets.filter(t => t.status === 1 || t.status === 2 || t.status === 3);
-        const concluidas = todosTickets.filter(t => t.status === 4);
-        const canceladas = todosTickets.filter(t => t.status === 5);
+        if (filtroPesquisaProtocolo !== "") {
+            ticketsFiltrados = ticketsFiltrados.filter(t => String(t.protocolo) === filtroPesquisaProtocolo);
+        }
+
+        const pendentes = ticketsFiltrados.filter(t => t.status === 1 || t.status === 2 || t.status === 3);
+        const concluidas = ticketsFiltrados.filter(t => t.status === 4);
+        const canceladas = ticketsFiltrados.filter(t => t.status === 5);
 
         renderizarCards(pendentes, concluidas, canceladas);
 
@@ -81,6 +114,14 @@ async function carregarTickets() {
 }
 
 function renderizarCards(pendentes, concluidas, canceladas) {
+
+    const removerCardsAntigos = (container) => {
+        const cards = container.querySelectorAll('.card');
+        cards.forEach(c => c.remove());
+    };
+    removerCardsAntigos(cardsPendentesContainer);
+    removerCardsAntigos(cardsConcluidosContainer);
+    removerCardsAntigos(cardsCanceladosContainer);
 
     if (pendentes.length == 0) {
         const noCardContainer = document.querySelector(".pendentes .noCard-container");
