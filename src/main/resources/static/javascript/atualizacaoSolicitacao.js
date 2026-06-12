@@ -1,5 +1,6 @@
 import { api } from './api.js';
 import { mostrarNotificacao } from './notificacao.js';
+import {formatAndRenderSingleCard} from "./dashboardCard.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -13,14 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const urlParams = new URLSearchParams(window.location.search);
     const protocolo = urlParams.get('protocolo');
+    console.log(protocolo);
 
     if (!protocolo) {
         mostrarNotificacao("Nenhum protocolo informado para atualização.", "aviso", 1500, () => {
             window.location.href = 'dashboardFuncionario.html';
         });
         return;
+    } else {
+        const cardContainer = document.querySelector(".boxes-container");
+        // const cardContainerContent = document.querySelector(".form-container");
+        // cardContainer.removeChild(cardContainerContent);
+        carregarTicket(protocolo, cardContainer);
+        // cardContainer.appendChild(cardContainerContent);
     }
 
+    
     const formAtualizacao = document.getElementById('form-atualizacao');
 
     if (formAtualizacao) {
@@ -58,3 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+async function carregarTicket(protocolo, container) {
+    let url = "/tickets/" + protocolo;
+
+    console.log(protocolo);
+    console.log(url);
+
+    try {
+        const response = await api.get(url);
+
+        if (response.status === 204 || !response.ok) {
+            return;
+        }
+
+        const ticket = await response.json();
+
+        formatAndRenderSingleCard(ticket, container, false, true);
+
+    } catch (error) {
+        console.error("Erro ao carregar solicitações:", error);
+    }
+}

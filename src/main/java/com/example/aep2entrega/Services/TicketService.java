@@ -20,6 +20,7 @@ public class TicketService {
     }
 
     public Ticket criarTicket(Ticket novoTicket) {
+        System.out.println("veio aqui service");
         novoTicket.setDataCriacao(LocalDateTime.now());
         novoTicket.setStatus(StatusTicket.ABERTO);
 
@@ -31,6 +32,11 @@ public class TicketService {
 
     public Ticket buscarTicketCidadao(Long protocolo, Integer idUsuario) {
         return ticketRepository.findByProtocoloAndUsuarioId(protocolo, idUsuario)
+                .orElse(null);
+    }
+
+    public Ticket buscarTicketGestor(Long protocolo) {
+        return ticketRepository.findById(protocolo)
                 .orElse(null);
     }
 

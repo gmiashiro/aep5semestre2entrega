@@ -1,4 +1,5 @@
 import { api } from './api.js';
+import {formatAndRenderCards} from "./dashboardCard.js";
 
 let filtroCategoriaAtual = null;
 let filtroPrioridadeAtual = null;
@@ -17,6 +18,12 @@ const mapaPrioridades = {
     "Alta": 3,
     "Urgente": 4
 };
+
+const cardsPendentesContainer = document.querySelector(".pendentes");
+const cardsConcluidosContainer = document.querySelector(".concluidos");
+const cardsCanceladosContainer = document.querySelector(".cancelados");
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const gestorLogadoStr = localStorage.getItem('gestorLogado');
@@ -38,11 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add("selected-button");
         });
     });
-
-    const filterContainers = document.querySelectorAll(".filter-container");
-    filterContainers.forEach(filterContainer => {
-        initializeFilterContainer(filterContainer);
-    });
+    
 });
 
 async function carregarTickets() {
@@ -60,7 +63,7 @@ async function carregarTickets() {
         const response = await api.get(url);
 
         if (response.status === 204 || !response.ok) {
-            chamarRenderizacaoExterna([], [], []);
+            renderizarCards([], [], []);
             return;
         }
 
@@ -70,14 +73,43 @@ async function carregarTickets() {
         const concluidas = todosTickets.filter(t => t.status === 4);
         const canceladas = todosTickets.filter(t => t.status === 5);
 
-        chamarRenderizacaoExterna(pendentes, concluidas, canceladas);
+        renderizarCards(pendentes, concluidas, canceladas);
 
     } catch (error) {
         console.error("Erro ao carregar solicitações:", error);
     }
 }
 
-function RenderizarCards(pendentes, concluidas, canceladas) {
+function renderizarCards(pendentes, concluidas, canceladas) {
+
+    if (pendentes.length == 0) {
+        const noCardContainer = document.querySelector(".pendentes .noCard-container");
+        noCardContainer.classList.remove("hidden");
+    } else {
+        const noCardContainer = document.querySelector(".pendentes .noCard-container");
+        noCardContainer.classList.add("hidden");
+        formatAndRenderCards(pendentes, cardsPendentesContainer, true, false);
+    }
+
+    if (concluidas.length == 0) {
+        const noCardContainer = document.querySelector(".concluidos .noCard-container");
+        noCardContainer.classList.remove("hidden");
+    } else {
+        const noCardContainer = document.querySelector(".concluidos .noCard-container");
+        noCardContainer.classList.add("hidden");
+        formatAndRenderCards(concluidas, cardsConcluidosContainer, true, false);
+    }
+
+
+    if (canceladas.length == 0) {
+        const noCardContainer = document.querySelector(".cancelados .noCard-container");
+        noCardContainer.classList.remove("hidden");
+    } else {
+        const noCardContainer = document.querySelector(".cancelados .noCard-container");
+        noCardContainer.classList.add("hidden");
+        formatAndRenderCards(canceladas, cardsCanceladosContainer, true, false);
+    }
+
     console.log("Tickets Pendentes recebidos:", pendentes);
     console.log("Tickets Concluídas recebidos:", concluidas);
     console.log("Tickets Canceladas recebidos:", canceladas);
@@ -189,3 +221,6 @@ function initializeFilterContainer(filterContainer) {
     }); 
 }
 
+function atualizarCard(cardId) {
+    window.location.href = "atualizacaoSolicitacao.html?protocolo=" + cardId;
+}
