@@ -1,4 +1,5 @@
 import { api } from './api.js';
+import {mostrarNotificacao} from "./notificacao";
 
 document.addEventListener('DOMContentLoaded', () => {
     const formLogin = document.querySelector('.form-body');
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const senha = document.getElementById('senha').value;
 
             if (!email || !senha) {
-                alert("Por favor, preencha todos os campos.");
+                mostrarNotificacao("Por favor, preencha todos os campos.", "aviso");
                 return;
             }
 
@@ -33,10 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     const errorMsg = await response.text();
                     alert(`Erro ao acessar: ${errorMsg}`);
+                    mostrarNotificacao(`Erro ao acessar: ${errorMsg}`, "erro");
                 }
             } catch (error) {
                 console.error("Erro no login:", error);
-                alert("Falha de conexão com o servidor.");
+                mostrarNotificacao("Falha de conexão com o servidor.", "erro");
             }
         });
     }

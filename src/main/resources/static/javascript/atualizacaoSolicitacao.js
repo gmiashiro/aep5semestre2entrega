@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const protocolo = urlParams.get('protocolo');
 
     if (!protocolo) {
-        alert("Nenhum protocolo informado para atualização.");
-        window.location.href = 'dashboardFuncionario.html';
+        mostrarNotificacao("Nenhum protocolo informado para atualização.", "aviso", 1500, () => {
+            window.location.href = 'dashboardFuncionario.html';
+        });
         return;
     }
 

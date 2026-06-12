@@ -45,9 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const ticketCriado = await response.json();
-                    mostrarNotificacao(`Solicitação criada com sucesso! Protocolo: ${ticketCriado.protocolo}`, "sucesso", 2500, () => {
-                        window.location.href = 'landingPage.html';
-                    });
+                    mostrarNotificacao(`Solicitação criada com sucesso! Protocolo: ${ticketCriado.protocolo}`, "sucesso");
 
                     window.location.href = 'landingPage.html';
                 } else {

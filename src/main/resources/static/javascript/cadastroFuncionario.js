@@ -1,4 +1,5 @@
 import { api } from './api.js';
+import { mostrarNotificacao } from './notificacao.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const formCadastro = document.querySelector('.form-body');
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const confirmacaoSenha = document.getElementById('confirmacaoSenha').value;
 
             if (senha !== confirmacaoSenha) {
-                alert("As senhas não coincidem!");
+                mostrarNotificacao("As senhas não coincidem!", "erro");
                 return;
             }
 
@@ -32,14 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const novoGestor = await response.json();
-                    alert("Cadastro realizado com sucesso!");
-                    window.location.href = 'loginFuncionario.html';
+                    mostrarNotificacao("Cadastro realizado com sucesso!", "sucesso", 1500, () => {
+                        window.location.href = 'loginFuncionario.html';
+                    });
                 } else {
                     const errorMsg = await response.text();
-                    alert(`Erro ao cadastrar: ${errorMsg}`);
+                    mostrarNotificacao(`Erro ao cadastrar: ${errorMsg}`, "erro");
                 }
             } catch (error) {
-                alert("Falha de conexão com o servidor.");
+                mostrarNotificacao("Falha de conexão com o servidor.", "erro");
             }
         });
     }

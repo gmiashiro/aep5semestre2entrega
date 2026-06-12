@@ -1,3 +1,5 @@
+import {mostrarNotificacao} from "./notificacao";
+
 document.addEventListener('DOMContentLoaded', () => {
     const profileButton = document.querySelector(".profile-button");
     const popupWindow = document.querySelector(".profile-window-container");
@@ -36,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Alternativamente, você pode usar localStorage.clear(); para apagar tudo de uma vez
 
-            alert("Você saiu do sistema com sucesso.");
-            // Redireciona para a página inicial ou de login
-            window.location.href = 'landingPage.html';
+            mostrarNotificacao("Você saiu do sistema com sucesso.", "sucesso", 1500, () => {
+                window.location.href = 'loginMorador.html';
+            });
         });
     }
 });
