@@ -1,22 +1,34 @@
 import { toggleProfileWindowLanding } from "./profileWindowLandingPage.js";
 
-const usuarioMorador = JSON.parse(localStorage.getItem('usuarioLogado'));
-const usuarioGestor = JSON.parse(localStorage.getItem('gestorLogado'));
-const usuarioAtivo = usuarioMorador || usuarioGestor;
-
 document.addEventListener('DOMContentLoaded', () => {
     const usuarioMorador = JSON.parse(localStorage.getItem('usuarioLogado'));
     const usuarioGestor = JSON.parse(localStorage.getItem('gestorLogado'));
     const usuarioAtivo = usuarioMorador || usuarioGestor;
-    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
-    console.log(usuarioLogado)
 
     const textoEntrar = document.getElementById('texto-entrar');
-    if (!usuarioAtivo && textoEntrar) {
-        textoEntrar.style.display = 'block';
+    const btnPerfil = document.querySelector('.profile-button');
+    const botoesCriar = document.querySelectorAll('.button-blue');
+    const botoaoAcessarPainel = document.querySelector('.acess-dashboard');
+
+    if (textoEntrar) {
+        if (!usuarioAtivo) {
+            textoEntrar.style.display = 'block';
+        }
+
+        textoEntrar.addEventListener('click', () => {
+            window.location.href = 'loginMorador.html';
+        });
     }
 
-    const botoesCriar = document.querySelectorAll('.button-blue');
+    if (btnPerfil) {
+        btnPerfil.addEventListener('click', () => {
+            if (usuarioAtivo) {
+                toggleProfileWindowLanding();
+            } else {
+                window.location.href = 'loginMorador.html';
+            }
+        });
+    }
 
     botoesCriar.forEach(botao => {
         if (botao.textContent.includes('Criar solicitação')) {
@@ -24,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
 
                 if (usuarioAtivo) {
-                    if (usuarioAtivo == usuarioMorador) {
+                    if (usuarioAtivo.cpf && !usuarioAtivo.cargo) { // Confirma que é morador
                         window.location.href = 'formsCriacaoSolicitacao.html';
-                    } 
+                    }
                 } else {
                     window.location.href = 'loginMorador.html';
                 }
@@ -34,32 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const botoaoAcessarPainel = document.querySelector('.acess-dashboard');
-
-    botoaoAcessarPainel.addEventListener("click", () => {
-
-        if (usuarioAtivo) {
-            console.log(usuarioAtivo)
-            console.log(usuarioMorador)
-            console.log(usuarioGestor)
-            if (usuarioGestor == null) {
-                console.log("era para ter dado certo")
-                window.location.href = 'dashboardMorador.html';
-            } else {
-                window.location.href = 'dashboardFuncionario.html';
-            }
-        } else {
-            window.location.href = 'loginMorador.html';
-        }
-    })
-
-    const btnPerfil = document.querySelector('.profile-button');
-
-    if (btnPerfil) {
-        btnPerfil.addEventListener('click', () => {
+    if (botoaoAcessarPainel) {
+        botoaoAcessarPainel.addEventListener("click", () => {
             if (usuarioAtivo) {
-                console.log(usuarioAtivo)
-                toggleProfileWindowLanding();
+                if (usuarioGestor == null) {
+                    window.location.href = 'dashboardMorador.html';
+                } else {
+                    window.location.href = 'dashboardFuncionario.html';
+                }
             } else {
                 window.location.href = 'loginMorador.html';
             }
