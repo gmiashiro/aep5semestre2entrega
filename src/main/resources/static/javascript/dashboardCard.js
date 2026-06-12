@@ -479,8 +479,6 @@ function createCard(cardData, isGestorDashboard, isDefaultExpanded) {
     return card;
 }
 
-var cards = [];
-
 export function formatAndRenderSingleCard(cardOriginal, container, isGestorDashboard, isDefaultExpanded) {
 
     console.log(cardOriginal);
@@ -512,12 +510,12 @@ export function formatAndRenderSingleCard(cardOriginal, container, isGestorDashb
 
 
 export function formatAndRenderCards(cardsOriginal, container, isGestorDashboard, isDefaultExpanded) {
-
+    const formattedCards = [];
     console.log(cardsOriginal);
 
     
     cardsOriginal.forEach(card => {
-        cards.push(
+        formattedCards.push(
             {
                 id: card.protocolo, 
                 status: card.status,
@@ -536,7 +534,7 @@ export function formatAndRenderCards(cardsOriginal, container, isGestorDashboard
         )
     });
 
-    cards.forEach(card => {
+    formattedCards.forEach(card => {
         container.appendChild(createCard(card, isGestorDashboard, isDefaultExpanded));
     });
 }
