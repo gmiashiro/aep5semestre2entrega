@@ -151,10 +151,10 @@ function initializeFilterContainer(filterContainer) {
     function applyFilter(option) {
         showRemoveFilterContainer();
 
-        if (mapaCategorias[optionTexto]) {
-            filtroCategoriaAtual = mapaCategorias[optionTexto];
-        } else if (mapaPrioridades[optionTexto]) {
-            filtroPrioridadeAtual = mapaPrioridades[optionTexto];
+        if (mapaCategorias[option]) {
+            filtroCategoriaAtual = mapaCategorias[option];
+        } else if (mapaPrioridades[option]) {
+            filtroPrioridadeAtual = mapaPrioridades[option];
         }
 
         carregarTickets();
