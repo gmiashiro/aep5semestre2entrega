@@ -59,8 +59,11 @@ a {
 }
 
 .header-profile {
+    position: relative;
     margin-right: 70px;
     display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .profile-button {

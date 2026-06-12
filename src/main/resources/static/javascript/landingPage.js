@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
     console.log(usuarioLogado)
 
+    const textoEntrar = document.getElementById('texto-entrar');
+    if (!usuarioAtivo && textoEntrar) {
+        textoEntrar.style.display = 'block';
+    }
+
     const botoesCriar = document.querySelectorAll('.button-blue');
 
     botoesCriar.forEach(botao => {
