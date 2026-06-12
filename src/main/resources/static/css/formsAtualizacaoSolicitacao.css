@@ -4,6 +4,24 @@ h1 {
     font-weight: 400;
 }
 
+/*
+.input-box {
+    font-size: 15px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    width: 414px;
+}
+
+.button-blue {
+    padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 9px;
+    background-color: #0E506C;
+}
+
+*/
+
 main {
     position: relative;
     display: flex;
@@ -16,6 +34,12 @@ main {
     flex-direction: row-reverse;
     gap: 25px;
     margin-top: 20px;
+}
+
+.form-container {
+    font-family: "Google Sans Flex", sans-serif;
+    color: #020D12;
+    padding: 20px;
 }
 
 .form-body {

@@ -50,9 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         botoaoAcessarPainel.addEventListener("click", () => {
             if (usuarioAtivo) {
                 if (usuarioGestor == null) {
+                    console.log("morador")
                     window.location.href = 'dashboardMorador.html';
                 } else {
                     window.location.href = 'dashboardFuncionario.html';
+                    console.log("gestor")
                 }
             } else {
                 window.location.href = 'loginMorador.html';

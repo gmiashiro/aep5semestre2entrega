@@ -4,6 +4,11 @@ main {
     padding: 84px 70px 0px 70px;
 }
 
+input {
+    outline: none;
+}
+
+
 .actions-container {
     display: flex;
     flex-direction: row;
